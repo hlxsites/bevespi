@@ -63,40 +63,37 @@
 /* black */
 @font-face {
     font-family: gotham-fallback;
-    font-display: swap;
     font-style: normal;
     font-weight: bold;
     src: local('Arial');
-    size-adjust: 112%;
-    ascent-override: 21%;
-    descent-override: 0%;
-    line-gap-override: 102%;
+    ascent-override: 68.65%;
+    descent-override: 17.16%;
+    line-gap-override: 17.16%;
+    size-adjust: 116.54%;
 }
 
 /* book */
 @font-face {
     font-family: gotham-fallback;
-    font-display: swap;
     font-style: normal;
     font-weight: 400;
     src: local('Arial');
-    size-adjust: 111%;
-    ascent-override: 18%;
-    descent-override: 0%;
-    line-gap-override: 123%;
+    ascent-override: 70.47%;
+    descent-override: 17.62%;
+    line-gap-override: 17.62%;
+    size-adjust: 113.52%;
 }
 
 /* medium */
 @font-face {
     font-family: gotham-fallback;
-    font-display: swap;
     font-style: normal;
     font-weight: 500;
     src: local('Arial');
-    size-adjust: 113%;
-    ascent-override: 18%;
-    descent-override: 0%;
-    line-gap-override: 105%;
+    ascent-override: 69.48%;
+    descent-override: 17.37%;
+    line-gap-override: 17.37%;
+    size-adjust: 115.14%;
 }
 
 @media (min-width: 900px) {
