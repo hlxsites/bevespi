@@ -69,7 +69,7 @@
   ascent-override: 68.65%;
   descent-override: 17.16%;
   line-gap-override: 17.16%;
-  size-adjust: 116.54%;
+  size-adjust: 120.54%;
 }
 
 /* book */
@@ -81,7 +81,6 @@
   ascent-override: 70.47%;
   descent-override: 17.62%;
   line-gap-override: 17.62%;
-  size-adjust: 113.52%;
 }
 
 /* medium */
@@ -93,7 +92,6 @@
   ascent-override: 69.48%;
   descent-override: 17.37%;
   line-gap-override: 17.37%;
-  size-adjust: 115.14%;
 }
 
 @media (min-width: 900px) {
