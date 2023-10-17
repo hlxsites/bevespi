@@ -38,6 +38,23 @@ export default async function decorate(block) {
   if (fragment) {
     const fragmentSection = fragment.querySelector(':scope .section');
     if (fragmentSection) {
+      if (fragmentSection.classList.contains('isi')) {
+        const tags = fragmentSection.querySelectorAll('.section.isi > div > *:nth-child(-n+2)');
+        if (tags && tags.length >= 2) {
+          const sticky = document.createElement('div');
+          sticky.classList.add('isi', 'sticky');
+          sticky.innerHTML = `
+            <div class='title'><div>${tags.item(0).outerHTML}</div><div class='plus'></div></div>
+            <div class='content'>${tags.item(1).outerHTML}</div>`;
+            const section = block.closest('.section');
+            section.parentElement.insertBefore(sticky, section);
+            const plus = sticky.querySelector('.plus');
+            plus.addEventListener('click', () => {
+              sticky.classList.add('hidden');
+              sticky.scrollIntoView(true, { behavior: "smooth" });
+            });
+        }
+      }
       block.closest('.section').classList.add(...fragmentSection.classList);
       block.closest('.fragment-wrapper').replaceWith(...fragmentSection.childNodes);
     }

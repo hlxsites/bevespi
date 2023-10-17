@@ -22,6 +22,7 @@
     --background-grey-3: #bebebe;
     --background-grey-4: #f6f6f6;
     --background-blue-1: #172660;
+    --background-blue-2: #0f1d53;
     --color-white: #fff;
     --background-color: var(--color-white);
     --text-orange: #f58321;
@@ -390,4 +391,67 @@ main .section.isi li {
 
 main .section.isi strong {
     font-weight: 500;
+}
+
+.isi.sticky {
+    position: fixed;
+    left: 0;
+    top: calc(100vh - 142px);
+    width: 100%;
+    background-color: var(--background-color);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: opacity 1s;
+}
+
+.isi.sticky.hidden {
+    opacity: 0;
+    position: unset;
+}
+
+.isi.sticky.hidden + .section.isi {
+    margin-top: -200px;
+}
+
+.isi.sticky .title {
+    height: 51px;
+    background-color: var(--background-blue-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.isi.sticky .title h2 {
+    font-size: 1.8rem;
+    color: var(--text-orange);
+    margin-top: 15px;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.isi.sticky .plus {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icons/icon_blue-plus.png');
+    background-size: contain;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.isi.sticky > div {
+    max-width: var(--page-max-width);
+    margin: auto;
+}
+
+.isi.sticky .content {
+    height: 91px;
+}
+
+.isi.sticky ul {
+    padding: 10px 0px 11px 20px;
+    margin: 0;
+}
+
+.isi.sticky ul li:nth-child(n+2) {
+    display: none;
 }
