@@ -350,6 +350,10 @@ main .section {
     padding: 64px 16px;
 }
 
+main .section .default-content-wrapper {
+    padding: 14px 14px 48px;
+}
+
 @media (min-width: 600px) {
     main .section {
         padding: 64px 32px;
