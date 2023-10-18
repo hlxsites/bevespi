@@ -11,4 +11,12 @@ export default async function decorate(block) {
 </div>`);
     block.appendChild(btnScroll);
   }
+  /* load second image for mobile eagerly for LCP */
+  const heroImageCol = block.querySelector('.hero.block > div:first-of-type');
+  const isDesktop = window.matchMedia('(min-width: 900px)');
+  const isMobileImg = heroImageCol.querySelector('picture:nth-of-type(2), p:nth-of-type(2)');
+  if (!isDesktop.matches && isMobileImg) {
+    heroImageCol.querySelector('p:nth-of-type(1) picture img, picture:nth-of-type(1) img').setAttribute('loading', 'lazy');
+    heroImageCol.querySelector('p:nth-of-type(2) picture img, picture:nth-of-type(2) img').setAttribute('loading', 'eager');
+  }
 }
