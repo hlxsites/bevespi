@@ -38,6 +38,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     position: relative;
     max-width: var(--page-max-width);
     margin: auto;
+    padding: 24px 0;
 }
 
 .accordion .accordion-row .accordion-row-content .accordion-row-header {
@@ -45,6 +46,10 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     align-items: center;
     min-height: 60px;
     position: relative;
+}
+
+.accordion.pink .accordion-row .accordion-row-content .accordion-row-header {
+    min-height: unset;
 }
 
 .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
@@ -57,7 +62,8 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
 .accordion.pink .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
     color: var(--expandable-button-color);
-    padding-left: 50px;
+    padding-left: 80px;
+    font-size: var(--heading-font-size-s);
 }
 
 .accordion .accordion-row .accordion-row-content > p,
@@ -84,6 +90,12 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
 .accordion .accordion-row.expanded .accordion-row-content p {
     font-size: var(--body-font-size-s);
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content p,
+.accordion.pink .accordion-row.expanded .accordion-row-content ul {
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .accordion .accordion-row .accordion-row-header picture {
@@ -122,7 +134,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
 .accordion.pink .accordion-row .accordion-row-content .expandable-button {
     left: 15px;
-    top: 15px;
+    top: 13px;
     right: unset;
     bottom: unset;
 }
@@ -141,7 +153,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 }
 
 .accordion.pink .accordion-row.expanded .accordion-row-content .expandable-button {
-    top: 15px;
+    top: 13px;
 }
 
 .accordion .accordion-row .accordion-row-content .expandable-button::before {
@@ -230,6 +242,12 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
     .accordion .accordion-row.expanded .accordion-row-content p {
         font-size: var(--body-font-size-m);
+    }
+
+    .accordion.pink .accordion-row.expanded .accordion-row-content p,
+    .accordion.pink .accordion-row.expanded .accordion-row-content ul {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p {
