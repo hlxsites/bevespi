@@ -1,5 +1,5 @@
-let withAutocollapse = false;
-let withPreview = false;
+let withAutocollapse = true;
+let withPreview = true;
 
 function collapseOtherRows(rows, selectedRow) {
   const currentRowIndex = parseInt(selectedRow.getAttribute('expandable-row-index'), 10);

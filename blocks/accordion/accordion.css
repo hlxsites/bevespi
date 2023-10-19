@@ -155,7 +155,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 }
 
 .accordion.pink .accordion-row .accordion-row-content .expandable-button::before {
-    border: 2px solid var(--expandable-button-color);
+    border: 1px solid var(--expandable-button-color);
     border-radius: 50%;
     right: unset;
     bottom: unset;
@@ -189,7 +189,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     transform: rotate(-45deg);
     background-color: unset;
     top: 14px;
-    left: 17px;
+    left: 16px;
 }
 
 .accordion.pink .accordion-row.expanded .accordion-row-content .expandable-button::after {
