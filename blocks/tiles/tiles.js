@@ -6,11 +6,30 @@ function closeOtherModals(block) {
   });
 }
 
+const classesToMap = {
+  'six-tips-to-help': '/html-fragments/six-tips.html',
+  'five-ways-to-enjoy-time': '/html-fragments/five-ways-to-enjoy.html',
+  'four-common-triggers': '/html-fragments/four-common-triggers.html',
+};
+
+async function loadMappings(tile, cover) {
+  await Promise.all([...tile.classList].map(async (c) => {
+    if (Object.keys(classesToMap).includes(c)) {
+      const fragment = await fetch(classesToMap[c]);
+      if (fragment.ok) {
+        cover.outerHTML = await fragment.text();
+        tile.classList.remove(c);
+        tile.classList.remove('numbered');
+      }
+    }
+  }));
+}
+
 export default function decorate(block) {
   block.querySelectorAll(':scope > div').forEach(async (tile) => {
     tile.classList.add('tile');
 
-    const cover = tile.querySelector(':scope > div:first-child');
+    let cover = tile.querySelector(':scope > div:first-child');
     const modalContent = tile.querySelector(':scope > div:nth-child(2)');
     const propertiesElement = tile.querySelector(':scope > div:nth-child(3)');
 
@@ -29,11 +48,8 @@ export default function decorate(block) {
       h3.parentElement.insertBefore(document.createElement('hr'), h3.nextSibling);
     }
 
-    // if (tile.classList.contains('six-tips-to-help')) {
-    //   const fragment = await fetch('/html-fragments/six-tips.html');
-    //   cover.innerHTML = await fragment.text();
-    //   // tile.classList.remove('six-tips-to-help');
-    // }
+    await loadMappings(tile, cover);
+    cover = tile.querySelector('.cover') ?? cover;
 
     if (modalContent.classList.contains('button-container')) {
       // only has a button. Then the tile becomes a link
