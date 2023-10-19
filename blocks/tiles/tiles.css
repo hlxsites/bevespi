@@ -53,7 +53,7 @@
   grid-row: auto / span 2;
 }
 
-.tiles.block > div > .cover h3 {
+.tiles.block > div > .cover h2 {
   margin: 0;
   color: var(--color-blue-2);
   font-weight: 500;
@@ -136,7 +136,7 @@
   font-family: var(--proximanova-font-family);
 }
 
-.tiles.block > .tile.white-text .cover h3 {
+.tiles.block > .tile.white-text .cover h2 {
   color: white;
 }
 
@@ -199,7 +199,7 @@
     width: calc(200% + var(--grid-gap));
   }
 
-  .tiles.block > div > .cover h3 {
+  .tiles.block > div > .cover h2 {
     font-size: 2.9rem;
     font-weight: 600;
     line-height: 1em;
@@ -246,12 +246,12 @@
 }
 
 /* Numbered elements */
-.tiles.block > div.tile.numbered .cover  h3 {
+.tiles.block > div.tile.numbered .cover  h2 {
   color: white;
   font-weight: 400;
 }
 
-.tiles.block > div.tile.numbered .cover  h3:first-of-type {
+.tiles.block > div.tile.numbered .cover  h2:first-of-type {
   font-size: 7rem;
   font-weight: 200;
   font-style: italic;
@@ -259,17 +259,17 @@
   font-family: var(--proximanova-font-family);
 }
 
-.tiles.block > div.tile.numbered .cover h3:last-of-type {
+.tiles.block > div.tile.numbered .cover h2:last-of-type {
   margin-bottom: auto;
 }
 
-.tiles.block > div.tile.numbered .cover h3 strong {
+.tiles.block > div.tile.numbered .cover h2 strong {
   color: var(--color-green);
   display: inline-block;
 }
 
 @media (min-width: 900px) {
-  .tiles.block > div.tile.numbered .cover  h3:first-of-type {
+  .tiles.block > div.tile.numbered .cover  h2:first-of-type {
     font-size: 9rem;
   }
 }

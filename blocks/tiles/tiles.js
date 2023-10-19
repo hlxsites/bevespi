@@ -44,8 +44,8 @@ export default function decorate(block) {
     picture?.closest('p').replaceWith(picture);
 
     if (tile.classList.contains('with-separator')) {
-      const h3 = tile.querySelector('h3:last-of-type');
-      h3.parentElement.insertBefore(document.createElement('hr'), h3.nextSibling);
+      const h2 = tile.querySelector('h2:last-of-type');
+      h2.parentElement.insertBefore(document.createElement('hr'), h2.nextSibling);
     }
 
     await loadMappings(tile, cover);
