@@ -47,32 +47,18 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     position: relative;
 }
 
+.accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
+    font-size: var(--heading-font-size-m);
+    color: var(--accordion-row-title-color);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    padding-right: 15px;
+}
+
 .accordion.pink .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
     color: var(--expandable-button-color);
     padding-left: 50px;
 }
-
-/* .accordion.pink .accordion-row .accordion-row-content .accordion-row-header::before {
-    content: "";
-    height: 40px;
-    width: 40px;
-    border: 2px solid var(--expandable-button-color);
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.accordion.pink .accordion-row .accordion-row-content .accordion-row-header::after {
-    content: "";
-    border: none;
-    height: 10px;
-    width: 10px;
-    border-left: 2px solid var(--expandable-button-color);
-    border-bottom: 2px solid var(--expandable-button-color);
-    transform: rotate(-45deg);
-    position: absolute;
-    left: 16px;
-    top: 22px;
-} */
 
 .accordion .accordion-row .accordion-row-content > p,
 .accordion .accordion-row .accordion-row-content > ul {
@@ -94,14 +80,6 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     display: flex;
     flex-direction: column;
     flex: 4;
-}
-
-.accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
-    font-size: var(--heading-font-size-m);
-    color: var(--accordion-row-title-color);
-    font-weight: var(--font-weight-bold);
-    margin: 0;
-    padding-right: 15px;
 }
 
 .accordion .accordion-row.expanded .accordion-row-content p {
@@ -254,20 +232,20 @@ main .section .accordion-wrapper .accordion .pink + main .section{
         font-size: var(--body-font-size-m);
     }
 
-    .accordion:not(.pink) .accordion-row.expanded .accordion-row-content > p:first-of-type {
-        display: none;
-    }
-
-    .accordion .accordion-row .accordion-row-content .accordion-row-header {
-        height: unset;
-    }
-
     .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p {
         display: block;
         max-height: 35px;
         overflow: hidden;
         margin: 0;
         padding: 10px 70px 0 0;
+    }
+
+    .accordion:not(.pink) .accordion-row.expanded .accordion-row-content > p:first-of-type {
+        display: none;
+    }
+
+    .accordion .accordion-row .accordion-row-content .accordion-row-header {
+        height: unset;
     }
 
     .accordion .accordion-row.expanded .accordion-row-content .accordion-row-header .accordion-title-header-container p {

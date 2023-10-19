@@ -94,7 +94,7 @@ function createAccordionRowHeader(row) {
   if (withPreview) {
     const firstParagraph = row.querySelector('p');
     if (firstParagraph) {
-    titleContainer.appendChild(firstParagraph.cloneNode(true));
+      titleContainer.appendChild(firstParagraph.cloneNode(true));
     }
   }
 
