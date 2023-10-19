@@ -1,13 +1,5 @@
-:root {
-    --header-color: #f58321;
-    --information-link-color: #f58321;
-    --sticky-fragment-header-color: #0f1d53;
-    --sticky-fragment-content-color: #fff;
-    --sticky-framgnet-scroll-button-color: #fff;
-}
-
 main .section.fragment-container.important-saferty-information h2 {
-    color: var(--header-color);
+    color: var(--text-orange);
     font-size: var(--heading-font-size-s);
     font-weight: var(--font-weight-bold);
     margin: 0 0 12px;
@@ -25,6 +17,7 @@ main .section.fragment-container ul li {
 main .section.fragment-container.important-safety-information ul li,
 main .section.fragment-container.important-safety-information p {
     font-size: var(--body-font-size-s-isi-fragment);
+    margin-bottom: 18px;
 }
 
 main .section.fragment-container > div {
@@ -36,7 +29,7 @@ main .section.fragment-container {
 }
 
 main .section.fragment-container.important-safety-information > div a {
-    color: var(--information-link-color) !important;
+    color: var(--text-orange) !important;
     text-decoration: underline !important;
 }
 
@@ -53,7 +46,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     width: 100%;
     max-width: unset !important;
     z-index: -1;
-    background-color: var(--sticky-fragment-content-color);
+    background-color: var(--background-color);
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -62,7 +55,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     z-index: 1;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
     main .section.fragment-container.important-safety-information h2 {
         font-size: var(--heading-font-size-ml);
     }
@@ -95,6 +88,10 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     padding: 0 7.5px;
 }
 
+main .section.isi .sticky-fragment-header-container h2 {
+    color: var(--text-orange-light);
+}
+
 main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content ul {
     padding: 12px 12px 11px 20px;
     font-size: var(--body-font-size-xs);
@@ -106,7 +103,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     font-size: var(--heading-font-size-s);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
     main .section.fragment-container.important-safety-information .sticky-fragment-block {
         bottom: 0;
     }
@@ -128,7 +125,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
 main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button {
     content: "";
     position: relative;
-    background-color: var(--sticky-framgnet-scroll-button-color);
+    background-color: var(--background-color);
     width: 30.4px;
     height: 30.4px;
     border-radius: 50%;
@@ -156,5 +153,5 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
 }
 
 main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content {
-    background-color: var(--sticky-fragment-content-color);
+    background-color: var(--background-color);
 }

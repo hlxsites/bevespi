@@ -24,12 +24,14 @@
     --background-blue-1: #172660;
     --color-white: #fff;
     --background-color: var(--color-white);
-    --text-orange: #f58321;
+    --text-orange: #8F440A;
+    --text-orange-light: #f58321;
     --text-color: #282828;
     --text-color-grey-1: #585858;
     --color-blue-1: #273670;
     --color-blue-2: #17265F;
     --cta-color: #e81b75;
+    --sticky-fragment-header-color: #0f1d53;
 
 
     /* fonts */
@@ -197,6 +199,10 @@ h6 {
 p, dl, ol, ul, pre, blockquote {
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+p {
+    line-height: 1.1;
 }
 
 hr {
@@ -391,9 +397,15 @@ main .section.isi {
 }
 
 main .section.isi h2 {
-    font-size: 1.8rem;
+    font-size: var(--heading-font-size-s);
     font-weight: 500;
     color: var(--text-orange);
+}
+
+@media (min-width: 900px) {
+    main .section.isi h2 {
+        font-size: var(--heading-font-size-ml);
+    }
 }
 
 main .section.isi ul {
