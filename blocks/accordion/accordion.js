@@ -1,14 +1,7 @@
-function handleExpandableButtonClick(rows, event) {
-  const selectedRow = event.currentTarget.parentElement.parentElement;
+let withAutocollapse = false;
+let withPreview = false;
 
-  selectedRow.classList.toggle('expanded');
-  const buttonLabel = event.currentTarget.querySelector('label');
-  const buttonText = selectedRow.classList.contains('expanded')
-    ? 'LESS'
-    : 'MORE';
-  buttonLabel.textContent = buttonText;
-  buttonLabel.parentElement.setAttribute('aria-label', buttonText);
-
+function collapseOtherRows(rows, selectedRow) {
   const currentRowIndex = parseInt(selectedRow.getAttribute('expandable-row-index'), 10);
   [...rows].forEach((row, index) => {
     if (index === currentRowIndex) {
@@ -24,6 +17,22 @@ function handleExpandableButtonClick(rows, event) {
       }
     }
   });
+}
+
+function handleExpandableButtonClick(rows, event) {
+  const selectedRow = event.currentTarget.parentElement.parentElement;
+
+  selectedRow.classList.toggle('expanded');
+  const buttonLabel = event.currentTarget.querySelector('label');
+  const buttonText = selectedRow.classList.contains('expanded')
+    ? 'LESS'
+    : 'MORE';
+  buttonLabel.textContent = buttonText;
+  buttonLabel.parentElement.setAttribute('aria-label', buttonText);
+
+  if (withAutocollapse) {
+    collapseOtherRows(rows, selectedRow);
+  }
 }
 
 function addExpandableButton(row, rows) {
@@ -67,10 +76,12 @@ function markItemsWithPictureBefore(row) {
 function createAccordionRowHeader(row) {
   const rowHeader = document.createElement('div');
   rowHeader.classList.add('accordion-row-header');
-  const picture = row.querySelector('picture');
-  if (picture) {
-    rowHeader.appendChild(picture.cloneNode(true));
-    picture.parentElement.remove();
+  if (withPreview) {
+    const picture = row.querySelector('picture');
+    if (picture) {
+      rowHeader.appendChild(picture.cloneNode(true));
+      picture.parentElement.remove();
+    }
   }
 
   const titleContainer = document.createElement('div');
@@ -80,9 +91,11 @@ function createAccordionRowHeader(row) {
     titleContainer.appendChild(title);
   }
 
-  const firstParagraph = row.querySelector('p');
-  if (firstParagraph) {
+  if (withPreview) {
+    const firstParagraph = row.querySelector('p');
+    if (firstParagraph) {
     titleContainer.appendChild(firstParagraph.cloneNode(true));
+    }
   }
 
   rowHeader.appendChild(titleContainer);
@@ -106,5 +119,17 @@ function createAccordion(block) {
 }
 
 export default function decorate(block) {
+  if (block.classList.contains('pink')) {
+    block.parentElement.parentElement.classList.add('full-width');
+  }
+
+  if (block.classList.contains('without-autoclose')) {
+    withAutocollapse = false;
+  }
+
+  if (block.classList.contains('without-preview')) {
+    withPreview = false;
+  }
+
   createAccordion(block);
 }

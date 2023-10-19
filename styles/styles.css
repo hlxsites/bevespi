@@ -407,3 +407,13 @@ main .section.isi li {
 main .section.isi strong {
     font-weight: 500;
 }
+
+main .section.full-width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+main .section.full-width > div {
+  margin: unset;
+  max-width: unset;
+}
