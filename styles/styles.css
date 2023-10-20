@@ -406,11 +406,6 @@ main .default-content-wrapper p > picture:first-child:last-child {
     margin: 0 auto;
 }
 
-main .default-content-wrapper p > strong:first-child:last-child {
-    font-size: 1.7rem;
-    color: var(--link-color);
-}
-
 @media (min-width: 900px) {
     main .default-content-wrapper {
         padding: 0 150px;
@@ -431,7 +426,6 @@ main .default-content-wrapper p > strong:first-child:last-child {
         padding: 0 180px;
     }
 }
-
 
 /* section metadata */
 main .section.grey {
@@ -585,4 +579,9 @@ main .section.isi strong {
 main .default-content-wrapper a:not(.button):any-link {
     color: var(--link-color-pink);
     font-weight: var(--link-font-weight);
+}
+
+main .default-content-wrapper p > strong:first-child:last-child {
+    font-size: 1.7rem;
+    color: var(--link-color);
 }
