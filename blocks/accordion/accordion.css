@@ -11,6 +11,13 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     padding-right: 0;
 }
 
+main .section.accordion-container > div > h2 {
+    text-align: left;
+    font-size: var(--heading-font-size-l);
+    padding-bottom: 20px;
+    width: 240px;
+}
+
 .accordion .accordion-row {
     margin-bottom: 10px;
 }
@@ -50,6 +57,11 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
 .accordion.pink .accordion-row .accordion-row-content .accordion-row-header {
     min-height: unset;
+    margin: 0;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content .accordion-row-header {
+    margin-bottom: 24px;
 }
 
 .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
@@ -88,7 +100,12 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     flex: 4;
 }
 
-.accordion .accordion-row.expanded .accordion-row-content p {
+.accordion.pink .accordion-row.expanded .accordion-row-content a {
+    color: var(--expandable-button-color);
+}
+
+.accordion .accordion-row.expanded .accordion-row-content p,
+.accordion .accordion-row.expanded .accordion-row-content ul {
     font-size: var(--body-font-size-s);
 }
 
@@ -98,16 +115,47 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     margin-right: 12px;
 }
 
+.accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p,
+.accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container ul {
+    display: none;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content > ul {
+    padding-left: 16px;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content ul li {
+    margin: 12px 0;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content ul li > ul {
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content > ul > li {
+    font-size: 1.5rem;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content ul li > ul li {
+    margin: 8px 0;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content ul li > ul li::marker {
+    font-size: 2rem;
+}
+
+.accordion.pink .accordion-row.expanded .accordion-row-content p:last-of-type,
+.accordion.pink .accordion-row.expanded .accordion-row-content ul:last-of-type,
+.accordion.pink .accordion-row.expanded .accordion-row-content li:last-of-type {
+    margin-bottom: 0;
+}
+
 .accordion .accordion-row .accordion-row-header picture {
     min-width: 88px;
     min-height: 58px;
     flex: 1;
     margin-right: 20px;
-}
-
-.accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p,
-.accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container ul {
-    display: none;
 }
 
 .accordion .accordion-row.expanded .accordion-row-content p.item-with-picture-before {
@@ -134,7 +182,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
 .accordion.pink .accordion-row .accordion-row-content .expandable-button {
     left: 15px;
-    top: 13px;
+    top: 20px;
     right: unset;
     bottom: unset;
 }
@@ -153,7 +201,7 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 }
 
 .accordion.pink .accordion-row.expanded .accordion-row-content .expandable-button {
-    top: 13px;
+    top: 20px;
 }
 
 .accordion .accordion-row .accordion-row-content .expandable-button::before {
@@ -167,14 +215,14 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 }
 
 .accordion.pink .accordion-row .accordion-row-content .expandable-button::before {
-    border: 1px solid var(--expandable-button-color);
+    border: 1.5px solid var(--expandable-button-color);
     border-radius: 50%;
     right: unset;
     bottom: unset;
     transform: unset;
     background-color: unset;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 
 .accordion:not(.pink) .accordion-row.expanded .accordion-row-content .expandable-button::before {
@@ -196,17 +244,17 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     height: 10px;
     width: 10px;
     border: none;
-    border-left: 2px solid var(--expandable-button-color);
-    border-bottom: 2px solid var(--expandable-button-color);
+    border-left: 2.5px solid var(--expandable-button-color);
+    border-bottom: 2.5px solid var(--expandable-button-color);
     transform: rotate(-45deg);
     background-color: unset;
-    top: 14px;
-    left: 16px;
+    top: 11px;
+    left: 13px;
 }
 
 .accordion.pink .accordion-row.expanded .accordion-row-content .expandable-button::after {
     transform: rotate(135deg);
-    top: 20px; 
+    top: 16px;
 }
 
 .accordion:not(.pink) .accordion-row.expanded .accordion-row-content .expandable-button::after {
@@ -218,7 +266,72 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     display: none;
 }
 
+.accordion .accordion-row.accordion-row-arrow-above {
+    position: relative;
+}
+
+.accordion .accordion-row.accordion-row-arrow-above::before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: var(--odd-row-background-color);
+    transform: rotate(45deg);
+    top:-10px;
+    left: 50%;
+}
+
+.accordion.pink .accordion-row .accordion-row-content p.button-container {
+    max-width: 200px;
+}
+
+.accordion.pink .accordion-row .accordion-row-content p.button-container a {
+    border: none;
+    background-color: transparent;
+    font-size: var(--body-font-size-s);
+    padding: 0;
+    position: relative;
+    text-transform: none;
+}
+
+.accordion.pink .accordion-row .accordion-row-content p.button-container a::before {
+    position: absolute;
+    right: -16px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: var(--expandable-button-color);
+    border-radius: 50%;
+}
+
+.accordion.pink .accordion-row .accordion-row-content p.button-container a::after {
+    position: absolute;
+    right: -8px;
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: transparent;
+    border: none;
+    border-top: 1.5px solid transparent;
+    border-right: 1.5px solid transparent;
+    transform: rotate(45deg);
+}
+
+.accordion.pink .accordion-row:nth-child(odd) .accordion-row-content p.button-container a::after {
+    border-color: var(--odd-row-background-color);
+}
+
+.accordion.pink .accordion-row:nth-child(even) .accordion-row-content p.button-container a::after {
+    border-color: var(--even-row-background-color);
+}
+
 @media (min-width: 600px) {
+    main .section.accordion-container > div > h2 {
+        text-align: center;
+        font-size: var(--heading-font-size-xxl-faq);
+        width: unset;
+    }
+
     .accordion:not(.pink) .accordion-row .accordion-row-content > p {
         padding-left: 153px;
         padding-right: 70px;
@@ -236,6 +349,10 @@ main .section .accordion-wrapper .accordion .pink + main .section{
         padding-left: 92px;
     }
 
+    .accordion.pink .accordion-row.expanded .accordion-row-content > ul {
+        padding-left: 92px;
+    }
+
     .accordion .accordion-row.expanded .accordion-row-header p {
         padding-right: 70px;
     }
@@ -248,6 +365,10 @@ main .section .accordion-wrapper .accordion .pink + main .section{
     .accordion.pink .accordion-row.expanded .accordion-row-content ul {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .accordion.pink .accordion-row.expanded .accordion-row-content ul li > ul {
+        padding-left: 20px;
     }
 
     .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p {
@@ -316,5 +437,22 @@ main .section .accordion-wrapper .accordion .pink + main .section{
 
     .accordion:not(.pink) .accordion-row:not(.expanded) .accordion-row-content .expandable-button > label {
         display: initial;
+    }
+
+    .accordion.pink .accordion-row .accordion-row-content .expandable-button,
+    .accordion.pink .accordion-row.expanded .accordion-row-content .expandable-button {
+        top: 15px;
+    }
+
+    .accordion.pink .accordion-row .accordion-row-content p.button-container {
+        max-width: unset;
+    }
+
+    .accordion.pink .accordion-row .accordion-row-content p.button-container a::before {
+        right: -23px;
+    }
+
+    .accordion.pink .accordion-row .accordion-row-content p.button-container a::after {
+        right: -15px;
     }
 }

@@ -1,5 +1,6 @@
 let withAutocollapse = true;
 let withPreview = true;
+let hasTitle = false;
 
 function collapseOtherRows(rows, selectedRow) {
   const currentRowIndex = parseInt(selectedRow.getAttribute('expandable-row-index'), 10);
@@ -108,6 +109,10 @@ function createAccordion(block) {
       return;
     }
 
+    if (index === 0 && hasTitle) {
+      row.classList.add('accordion-row-arrow-above');
+    }
+
     row.classList.add('accordion-row');
     row.setAttribute('expandable-row-index', index);
     const rowContent = row.children[0];
@@ -119,6 +124,10 @@ function createAccordion(block) {
 }
 
 export default function decorate(block) {
+  if (block.parentElement.parentElement.children[0].children[0].tagName === 'H2') {
+    hasTitle = true;
+  }
+
   if (block.classList.contains('pink')) {
     block.parentElement.parentElement.classList.add('full-width');
   }
