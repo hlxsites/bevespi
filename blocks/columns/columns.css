@@ -54,7 +54,7 @@
   align-self: center;
 }
 
-.section.columns-container > div {
+.section.columns-container > div.columns-wrapper {
   max-width: 100%;
 }
 
