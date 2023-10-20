@@ -23,6 +23,7 @@
     --background-grey-4: #f6f6f6;
     --background-blue-1: #172660;
     --color-white: #fff;
+    --color-grey-5: #ccc;
     --background-color: var(--color-white);
     --text-orange: #8F440A;
     --text-orange-light: #f58321;
@@ -429,4 +430,93 @@ main .section.full-width {
 main .section.full-width > div {
   margin: unset;
   max-width: unset;
+}
+
+.home .columns-row img {
+    max-width: 260px;
+    max-height: 200px;
+}
+
+@media (min-width: 900px) {
+    .home .columns-row img {
+        max-width: 330px;
+        max-height: 330px;
+    }
+}
+
+.copd-treatment .columns-row {
+    position: relative;
+    padding-bottom: 125px;
+}
+
+.copd-treatment .columns-80-20 .columns-row {
+    padding-bottom: unset;
+}
+
+.copd-treatment .columns-row:last-of-type {
+    margin-bottom: -25px;
+}
+
+.copd-treatment .columns .button-container {
+    border-top: 1px solid var(--color-grey-5);
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+}
+
+.copd-treatment .button-container a {
+    border: unset;
+    background-color: unset;
+    font-size: var(--body-font-size-s);
+    padding: 0;
+    text-transform: unset;
+}
+
+.copd-treatment .columns .button-container a {
+    margin-top: 30px;
+}
+
+.copd-treatment .button-container a::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('/icons/icon_pink-arrow-right-md.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    margin-left: auto;
+    transform: translate(10px, -2px);
+}
+
+.copd-treatment .columns-80-20 {
+    color: var(--link-color);
+    font-size: var(--body-font-size-xl);
+}
+
+.copd-treatment .columns-60-40 .columns-img-col {
+    order: 3;
+}
+
+@media (min-width: 900px) {
+    .copd-treatment .columns-60-40 .columns-img-col {
+        order: unset;
+    }
+
+    .copd-treatment .columns-row {
+        position: unset;
+        padding-bottom: unset;
+    }
+
+    .copd-treatment .columns-row:last-of-type {
+        margin-bottom: unset;
+    }
+    
+    .copd-treatment .columns .button-container {
+        position: unset;
+        width: unset;
+    }
+
+    .copd-treatment .columns .button-container a {
+        margin-top: 6px;
+    }
 }
