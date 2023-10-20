@@ -1,0 +1,94 @@
+.section > div.next-wrapper {
+  max-width: unset;
+}
+
+.next.block {
+  --next-block-height: 64px;
+  --next-block-width: 308px;
+
+  position: relative;
+  height: var(--next-block-height);
+}
+
+.next.block > div {
+  background: url('../../images/next_bar.jpeg') no-repeat;
+  height: 100%;
+  width: var(--next-block-width);
+  position: absolute;
+  right: calc(var(--next-block-width) * -1);
+  transition: right 0.8s ease-in-out;
+}
+
+.next.block.active > div {
+  right: 0;
+}
+
+.next.block.active > div > div {
+  margin-top: 15px;
+  border: 0;
+}
+
+.next.block a {
+  color: var(--background-color);
+  font-weight: 400;
+}
+
+.next.block a::after {
+  display: none;
+}
+
+.next.block a:hover {
+  font-weight: 500;
+}
+
+.next.block a span {
+  display: inline-block;
+}
+
+.next-large {
+  font-size: 3.3rem;
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.next-small {
+  font-size: var(--body-font-size-xs);
+  padding-left: 10px;
+  width: 143px;
+}
+
+.next-icon {
+  margin: 0 0 0 3px;
+  width: 15px;
+  height: 23px;
+  background: url('../../icons/icon_arr-wht-rite-lg.png') no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 900px) {
+  .next.block {
+    --next-block-height: 100px;
+    --next-block-width: 723px;
+  }
+
+  .next.block.active > div > div {
+    margin-top: 25px;
+  }
+
+  .next-large {
+    font-size: 4.5rem;
+    padding-left: 35px;
+  }
+
+  .next-small {
+    font-size: var(--body-font-size-l);
+    padding-left: 15px;
+    width: 212px;
+  }
+
+  .next-icon {
+    margin: 0 0 0 10px;
+    width: 16px;
+    height: 29px;
+  }
+}
