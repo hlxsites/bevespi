@@ -408,8 +408,6 @@ main .default-content-wrapper p > picture:first-child:last-child {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    max-width: 75px;
-    height: auto;
 }
 
 main .default-content-wrapper p > strong:first-child:last-child {
@@ -419,13 +417,22 @@ main .default-content-wrapper p > strong:first-child:last-child {
 
 @media (min-width: 900px) {
     main .default-content-wrapper {
-        padding-left: 150px;
-        padding-right: 150px;
+        padding: 0 150px;
         box-sizing: border-box;
+    }
+
+    main .important-safety-information .default-content-wrapper {
+        padding: 0;
     }
 
     main .default-content-wrapper h2 {
         font-size: 3.2rem;
+        padding: 0 100px;
+    }
+
+    main .center .default-content-wrapper {
+        text-align: center;
+        padding: 0 180px;
     }
 }
 
@@ -475,4 +482,16 @@ main .section.isi strong {
     background-color: transparent;
     width: 155px;
     margin: auto;
+}
+
+@media (min-width: 900px) {
+    .getting-started .button-container {
+        width: unset;
+    }
+
+    .getting-started a.button:any-link, button {
+        font-size: 1.3rem;
+        width: fit-content;
+        height: 40px;
+    }
 }

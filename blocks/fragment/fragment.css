@@ -17,7 +17,7 @@ main .section.fragment-container ul li {
 main .section.fragment-container.important-safety-information ul li,
 main .section.fragment-container.important-safety-information p {
     font-size: var(--body-font-size-s-isi-fragment);
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
 
 main .section.fragment-container > div {
