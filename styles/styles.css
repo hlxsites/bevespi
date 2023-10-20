@@ -395,46 +395,8 @@ main .section {
     }
 }
 
-/* section metadata */
-main .section.grey {
-    background-color: var(--background-grey-4);
-}
-
-main .section.isi {
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-main .section.isi h2 {
-    font-size: var(--heading-font-size-s);
-    font-weight: 500;
-    color: var(--text-orange);
-}
-
-@media (min-width: 900px) {
-    main .section.isi h2 {
-        font-size: var(--heading-font-size-ml);
-    }
-}
-
-main .section.isi ul {
-    padding: 4px 0 11px 20px;
-}
-
-main .section.isi li {
-    margin: 8px 0;
-}
-
-main .section.isi strong {
-    font-weight: 500;
-}
 main .default-content-wrapper h2 {
     font-size: var(--heading-font-size-l);
-}
-
-main .default-content-wrapper a:not(.button):any-link {
-    color: var(--link-color-pink);
-    font-weight: var(--link-font-weight);
 }
 
 main .default-content-wrapper p > picture:first-child:last-child {
@@ -470,6 +432,41 @@ main .default-content-wrapper p > strong:first-child:last-child {
     }
 }
 
+
+/* section metadata */
+main .section.grey {
+    background-color: var(--background-grey-4);
+}
+
+main .section.isi {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+main .section.isi h2 {
+    font-size: var(--heading-font-size-s);
+    font-weight: 500;
+    color: var(--text-orange);
+}
+
+@media (min-width: 900px) {
+    main .section.isi h2 {
+        font-size: var(--heading-font-size-ml);
+    }
+}
+
+main .section.isi ul {
+    padding: 4px 0 11px 20px;
+}
+
+main .section.isi li {
+    margin: 8px 0;
+}
+
+main .section.isi strong {
+    font-weight: 500;
+}
+
 .getting-started .button-container {
     padding-bottom: 20px;
     border-bottom: 1px solid var(--highlight-background-color);
@@ -478,7 +475,7 @@ main .default-content-wrapper p > strong:first-child:last-child {
     text-align: center;
 }
 
-.getting-started a.button:any-link, button {
+.getting-started a.button:any-link {
     background-color: transparent;
     width: 155px;
     margin: auto;
@@ -583,4 +580,9 @@ main .default-content-wrapper p > strong:first-child:last-child {
     .copd-treatment .columns .button-container a {
         margin-top: 6px;
     }
+}
+
+main .default-content-wrapper a:not(.button):any-link {
+    color: var(--link-color-pink);
+    font-weight: var(--link-font-weight);
 }
