@@ -116,11 +116,6 @@ main .hero.with-down-arrow > div:first-of-type p picture::after {
   box-sizing: border-box;
 }
 
-main .hero.with-down-arrow > div:first-of-type p:last-of-type picture::before,
-main .hero.with-down-arrow > div:first-of-type p:last-of-type picture::after {
-  bottom: 19px;
-}
-
 main .hero.with-down-arrow > div:first-of-type p picture::before {
   border-bottom: 20px solid var(--color-white);
   border-right: 20px solid transparent;
@@ -130,6 +125,11 @@ main .hero.with-down-arrow > div:first-of-type p picture::after {
   right: 0;
   border-bottom: 20px solid var(--color-white);
   border-left: 20px solid transparent;
+}
+
+main .hero.with-down-arrow > div:first-of-type p:last-of-type picture::before,
+main .hero.with-down-arrow > div:first-of-type p:last-of-type picture::after {
+  bottom: 19px;
 }
 
 main .hero > div:first-of-type p > picture {
