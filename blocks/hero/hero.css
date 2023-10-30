@@ -107,8 +107,8 @@ main .hero > div:first-of-type picture {
   box-sizing: border-box;
 }
 
-main .hero.with-down-arrow > div:first-of-type p picture::before,
-main .hero.with-down-arrow > div:first-of-type p picture::after {
+main .hero.with-down-arrow > div:first-of-type picture::before,
+main .hero.with-down-arrow > div:first-of-type picture::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -116,12 +116,12 @@ main .hero.with-down-arrow > div:first-of-type p picture::after {
   box-sizing: border-box;
 }
 
-main .hero.with-down-arrow > div:first-of-type p picture::before {
+main .hero.with-down-arrow > div:first-of-type picture::before {
   border-bottom: 20px solid var(--color-white);
   border-right: 20px solid transparent;
 }
 
-main .hero.with-down-arrow > div:first-of-type p picture::after {
+main .hero.with-down-arrow > div:first-of-type picture::after {
   right: 0;
   border-bottom: 20px solid var(--color-white);
   border-left: 20px solid transparent;
