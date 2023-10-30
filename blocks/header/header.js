@@ -44,7 +44,7 @@ export default async function decorate(block) {
 
     const explore = nav.querySelector('.nav-middle > div > div > div > div:nth-of-type(3)');
     if (explore) {
-      explore.innerHTML = "<span class='explore'>Explore</span><span class='close'>Close</span>";
+      explore.innerHTML = "<span class='explore'>Explore</span>";
       explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
     }
 

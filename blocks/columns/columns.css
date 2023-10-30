@@ -2,6 +2,10 @@
   padding-top: 0;
 }
 
+.home .section.hero-container + .section.columns-container .columns-row:first-of-type {
+  padding-top: 35px;
+}
+
 .columns {
   font-size: var(--body-font-size-s);
 }
@@ -83,6 +87,10 @@
 }
 
 @media (min-width: 900px) {
+  .home .section.hero-container + .section.columns-container .columns-row:first-of-type {
+    padding-top: 80px;
+  }
+
   .columns.rows-grey-white > div.columns-row:nth-child(odd) {
     background-image: url('../../images/bg-section-new.png');
     background-size: 100% 100%;

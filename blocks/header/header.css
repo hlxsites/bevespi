@@ -271,15 +271,6 @@ header .nav-middle > div > div > div div:nth-of-type(3) .close {
   display: none;
 }
 
-header .expanded .nav-middle > div > div > div div:nth-of-type(3) .close {
-  display: block;
-  color: var(--background-color);
-}
-
-header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
-  display: none;
-}
-
 @media (min-width: 900px) {
   header .nav-top {
     height: 40px;

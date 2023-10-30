@@ -699,13 +699,6 @@ main .section.small-vertical-margins {
     }
 }
 
-@media (min-width: 900px) {
-    .home .columns-row img {
-        max-width: 330px;
-        max-height: 330px;
-    }
-}
-
 .copd-treatment .columns-row {
     position: relative;
     padding-bottom: 125px;
