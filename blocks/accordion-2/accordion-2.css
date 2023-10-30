@@ -22,11 +22,20 @@ main .section div.accordion-2-wrapper {
 
 .accordion-2 .buttons {
   position: absolute;
-  bottom: 10px;
+  top: 20px;
   right: 10px;
   color: var(--text-pink);
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.accordion-2 .buttons.desktop {
+  visibility: hidden;
+}
+
+.accordion-2 .buttons.mobile {
+  font-size: 30px;
+  color: #e81b75 !important;
 }
 
 .accordion-2 .button-more,
@@ -65,11 +74,11 @@ main .section div.accordion-2-wrapper {
   max-width: var(--page-max-width);
   margin: 13px;
   border: 2px solid var(--color-grey-6);
-  padding: 12px;
+  padding: 10px;
   display: grid;
   grid-template-columns: 100px auto;
   grid-auto-rows: auto;
-  gap: 0 20px;
+  gap: 0 10px;
   overflow: hidden;
 }
 
@@ -80,11 +89,14 @@ main .section div.accordion-2-wrapper {
 .accordion-2 > div > div > p.p-img-first {
   grid-column: 1;
   grid-row: 1;
+  align-self: center;
 }
 
 .accordion-2 > div > div > h2 {
   grid-column: 2;
   grid-row: 1;
+  align-self: center;
+  padding-right: 25px;
 }
 
 .accordion-2 > div > div > *:nth-child(n+3) {
@@ -92,28 +104,35 @@ main .section div.accordion-2-wrapper {
   grid-row: auto;
 }
 
-.accordion-2 > div > div > .p-img {
-  grid-column: 1;
-}
-
 .accordion-2 p:nth-of-type(n+2) {
-  margin: 10px 50px 0 0;
+  margin: 10px 20px 0 0;
 }
 
-.accordion-2 > div > div > .p-img + p {
-  grid-column: 2;
-  margin-top: 20px;
+.accordion-2 > div > div > .p-img {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  grid-template-columns: 100px auto;
+  align-items: center;
+}
+
+.accordion-2 > div > div > .p-img picture {
+  flex: 0 0 80px;
+}
+
+.accordion-2 > div > div > p.p-img-first img {
+  height: 55px;
 }
 
 .accordion-2 > div > div > p:not(.p-img-first) {
-  display: none;
+  visibility: hidden;
 }
 
 .accordion-2 > div > div.active > p {
-  display: block;
+  visibility: visible;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .accordion-2 {
     font-size: var(--body-font-size-m);
   }
@@ -129,6 +148,10 @@ main .section div.accordion-2-wrapper {
     grid-row: 1 / 3;
   }
 
+  .accordion-2 > div > div > p.p-img-first img {
+    height: 82px;
+  }
+
   .accordion-2 > div > div {
     height: 85px;
     grid-template-columns: 145px 80px auto;
@@ -137,24 +160,31 @@ main .section div.accordion-2-wrapper {
 
   .accordion-2 > div > div > h2 {
     grid-column: 2 / 4;
-    grid-row: auto;
+    grid-row: 1;
   }
   
   .accordion-2 > div > div > *:nth-child(n+3) {
     grid-column: 2 / 4;
     grid-row: auto;
   }
-  
-  .accordion-2 > div > div > .p-img {
-    grid-column: 2;
-  }
-  
-  .accordion-2 > div > div > .p-img + p {
-    grid-column: 3 / 4;
-    margin-top: 30px;
-  }
 
   .accordion-2 > div > div > p.p-first {
-    display: block;
+    visibility: visible;
+    height: 35px;
+    overflow: hidden;
+    grid-row: 2;
+  }
+
+  .accordion-2 > div > div.active > p.p-first {
+    height: unset;
+    overflow: unset;
+  }
+
+  .accordion-2 .buttons.desktop {
+    visibility: visible;
+  }
+
+  .accordion-2 .buttons.mobile {
+    visibility: hidden;
   }
 }

@@ -288,7 +288,7 @@ main img {
 .default-content-wrapper img {
     transform: scale(0.8);
   }
-  
+
   @media (min-width: 900px) {
     .columns-row img,
     .default-content-wrapper img {
@@ -624,11 +624,25 @@ main .section.isi {
     line-height: 1;
 }
 
+.what-is-copd h2
+{
+    font-size: var(--body-font-size-xl);
+}
+
 main .section.isi h2 {
     font-size: var(--heading-font-size-s);
     font-weight: 500;
     color: var(--text-orange);
     margin-bottom: 20px;
+}
+
+main div:not(.isi) .default-content-wrapper h2 {
+    font-size: 2rem;
+}
+
+.what-is-copd div.boxes.block > div h2
+{
+    font-size: var(--body-font-size-xl);
 }
 
 @media (min-width: 900px) {
@@ -748,10 +762,6 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
-main div:not(.isi) .default-content-wrapper h2 {
-    font-size: 2rem;
-}
-
 .copd-resources main div:not(.isi) .default-content-wrapper strong {
     font-weight: 400;
 }
@@ -772,6 +782,12 @@ main div:not(.isi) .default-content-wrapper h2 {
 
 .copd-resources main .section.isi .button-container a::after {
     display: none;
+}
+
+.what-is-copd .default-content-wrapper {
+    padding: 0 12px;
+    max-width: 635px;
+    text-align: left;
 }
 
 .section.copd-treatment-intro > .default-content-wrapper,
@@ -924,6 +940,12 @@ main .section:not(.isi) .default-content-wrapper {
     margin: 0 0 10px;
 }
 
+.what-is-copd .what-is-copd-infographic .columns-row img{
+    aspect-ratio: unset;
+    max-width: 401px;
+    max-height: 194px;
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper img {
     transform: scale(0.6);
 }
@@ -975,10 +997,59 @@ main .section.centered p:has(picture:first-child:last-child) {
     font-size: 1.3rem;
 }
 
+
+.what-is-copd {
+    font-size: var(--body-font-size-s);
+}
+
+.what-is-copd div.boxes.block {
+    margin: 12px;
+}
+
+.what-is-copd .what-is-copd-infographic .columns-row > div{
+    row-gap: 30px;
+}
+
+.what-is-copd div.boxes.block > div {
+    padding: 25px 20px;
+}
+
+.what-is-copd .video-embed {
+    margin: auto;
+    padding: 12px;
+    max-width: 645px;
+}
+
 @media (min-width: 900px) {
+    .what-is-copd h2
+    {
+        font-size: 3.2rem;
+    }
+
+    .what-is-copd div.boxes.block {
+        margin: auto;
+    }
+
     .getting-started main div:not(.isi) .default-content-wrapper h2 {
         max-width: 650px;
         margin: 50px auto;
+        font-size: 3.2rem;
+    }
+
+    .what-is-copd .what-is-copd-infographic .columns-row img{
+        max-width: unset;
+        max-height: unset;
+        aspect-ratio: unset;
+        width: 401px;
+        height: 194px;
+    }
+
+    .what-is-copd {
+        font-size: var(--body-font-size-m);
+    }
+
+    .what-is-copd div.boxes.block > div h2
+    {
         font-size: 3.2rem;
     }
 
@@ -989,6 +1060,25 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main .section.inhaler {
         position: relative;
         padding-bottom: 120px;
+    }
+
+    .what-is-copd .default-content-wrapper {
+        padding: 0 12px;
+        text-align: center;
+        max-width: 635px;
+    }
+
+    .what-is-copd .boxes {
+        max-width: 830px;
+    }
+
+    .what-is-copd div.boxes.block > div {
+        padding: 30px 35px;
+    }
+
+    .what-is-copd-infographic {
+        margin: auto;
+        max-width: 875px;
     }
 
     .getting-started .section.section.inhaler::before,

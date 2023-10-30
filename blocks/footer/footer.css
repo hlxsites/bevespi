@@ -56,12 +56,8 @@ footer .footer > div ul > li {
 
 @media (min-width: 900px) {
     footer .footer > div > div > ul {
-        display: grid;
-        grid-template-rows: none;
-        grid-auto-columns: fit-content(120px);
-        grid-template-columns: repeat(auto-fit, minmax(120px,auto));
-        column-gap: 10px;
-        row-gap: 6px;
+        display: flex;
+        justify-content: space-between;
     }
 
     footer .footer > div > div > p {
