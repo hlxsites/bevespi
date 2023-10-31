@@ -1,56 +1,81 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Page not found" />
+    <meta property="og:title" content="Page not found" />
+    <title>Page not found</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <title>Page not found</title>
-  <script type="text/javascript">
-    window.isErrorPage = true;
-    window.errorCode = '404';
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Page not found">
-  <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
-  <script type="module">
-    import { sampleRUM } from '/scripts/aem.js';
+      main.error {
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+      }
 
-    window.addEventListener('load', () => {
-      sampleRUM('404', { source: document.referrer, target: window.location.href });
-    });
-  </script>
-  <link rel="stylesheet" href="/styles/styles.css">
-  <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-    }
+      .error-number {
+        width: 120px;
+        height: 80px;
+        fill: #e74c3c;
+      }
 
-    main.error .error-number {
-      width: 100%;
-    }
+      .error-message {
+        font-size: 2rem;
+        margin: 20px 0;
+      }
 
-    main.error .error-number text {
-      font-family: var(--fixed-font-family);
-    }
-  </style>
-  <link rel="stylesheet" href="/styles/lazy-styles.css">
-</head>
+      p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        text-align: center;
+      }
 
-<body>
-  <header></header>
-  <main class="error">
-    <div class="section">
+      .button-container {
+        text-align: center;
+      }
+
+      .error-button-home {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #e74c3c;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .error-button-home:hover {
+        background-color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="error">
       <svg viewBox="1 0 38 18" class="error-number">
         <text x="0" y="17">404</text>
       </svg>
       <h2 class="error-message">Page Not Found</h2>
-      <p>The page you are looking for does not exist. We are sorry for the inconvenience.</p>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Back to Home Page</a>
+      <p>
+        The page you are looking for does not exist. We are sorry for the
+        inconvenience.
       </p>
-    </div>
-  </main>
-  <footer></footer>
-</body>
-
+      <p class="button-container">
+        <a href="/" class="button secondary error-button-home"
+          >Back to Home Page</a
+        >
+      </p>
+    </main>
+  </body>
 </html>
