@@ -877,6 +877,10 @@ main .section.hero-container + .section {
     font-size: 1.4rem;
 }
 
+.what-is-copd .default-content-wrapper:first-of-type {
+    margin-bottom: 28px;
+}
+
 main .section:not(.isi) .default-content-wrapper {
     font-size: var(--body-font-size-s);
 }
@@ -1292,6 +1296,10 @@ h2 > br {
         padding: 0 12px;
         text-align: center;
         max-width: 635px;
+    }
+
+    .what-is-copd .default-content-wrapper:first-of-type {
+        margin-bottom: 40px;
     }
 
     .what-is-copd > .default-content-wrapper:nth-last-of-type(2) {
