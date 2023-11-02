@@ -1090,7 +1090,6 @@ main .section[data-background] picture.section-background-img {
     object-fit: cover;
     z-index: -2;
     overflow: hidden;
-    outline: 2px solid green;
 }
 
 main .section[data-background] picture.section-background-img img {
