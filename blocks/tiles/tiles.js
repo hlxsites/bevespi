@@ -33,6 +33,9 @@ export default function decorate(block) {
       // only has a button. Then the tile becomes a link
       const a = modalContent.querySelector('a');
       a.innerHTML = '';
+      if (a.href.endsWith('.pdf')) {
+        a.target = '_blank';
+      }
       a.append(cover);
       a.parentElement.replaceWith(a);
       a.classList.add('cover');
