@@ -1090,6 +1090,7 @@ main .section[data-background] picture.section-background-img {
     object-fit: cover;
     z-index: -2;
     overflow: hidden;
+    outline: 2px solid green;
 }
 
 main .section[data-background] picture.section-background-img img {
@@ -1188,7 +1189,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     }
 
     main .section[data-background] picture.section-background-img img {
-        height: unset;
+        height: 100%;
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
@@ -1543,23 +1544,27 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-  
+
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
-    }
-
-    .taking-bevespi-aerosphere main .section.highlight-1-container {
-        margin-top: -53px;
     }
 
     .taking-bevespi-aerosphere main .section.highlight-1-container > div:first-of-type > p:first-of-type {
         transform: translateY(-20px);
     }
 
+    .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type p {
+        width: 96%;
+    }
+
+    .taking-bevespi-aerosphere main .section.highlight-1-container {
+        margin-top: -53px;
+    }
+
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
     }
-  
+
     .getting-started main .hero.block picture {
         top: unset;
     }
