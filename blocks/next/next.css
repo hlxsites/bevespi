@@ -63,7 +63,6 @@
 .next-small {
   font-size: var(--body-font-size-xs);
   padding-left: 10px;
-  width: 143px;
 }
 
 .next-icon {
@@ -92,7 +91,7 @@
   .next-small {
     font-size: var(--body-font-size-l);
     padding-left: 15px;
-    width: 215px;
+    min-width: 110px;
   }
 
   .next-icon {
