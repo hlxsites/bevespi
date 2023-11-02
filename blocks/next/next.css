@@ -91,7 +91,7 @@
   .next-small {
     font-size: var(--body-font-size-l);
     padding-left: 15px;
-    min-width: 110px;
+    max-width: 210px;
   }
 
   .next-icon {
