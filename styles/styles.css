@@ -1314,9 +1314,11 @@ h2 > br {
         margin-bottom: 22px;
     }
 
+    /* stylelint-disable selector-id-pattern */
     #understanding-copdemphysema--chronic-bronchitis {
         margin-bottom: 37px;
     }
+    /* stylelint-enable selector-id-pattern */
 
     #rescue-maintenance-and-controller-inhalerswhats-the-difference {
         font-size: 2.9rem;
@@ -1572,7 +1574,7 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-  
+
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
     }
@@ -1605,7 +1607,7 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .next.block .next-small {
         width: 115px;
     }
-  
+
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
         .getting-started main .hero.block picture {
