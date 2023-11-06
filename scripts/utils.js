@@ -9,7 +9,9 @@ export function onScroll() {
     );
     if (stickySections.length > 0) {
       const importantSafetyInformationSectionsHeight = stickySections[0].clientHeight;
-      const windowBottomPosition = window.scrollY + window.innerHeight - importantSafetyInformationSectionsHeight;
+      const windowBottomPosition = window.scrollY 
+        + window.innerHeight 
+        - importantSafetyInformationSectionsHeight;
       if (windowBottomPosition <= offset) {
         stickySections[0].classList.add('fixed-section');
       } else {
@@ -25,10 +27,9 @@ export function scrollToInformationBlock() {
   );
 
   if (informationBlockElement.length > 0) {
-    const offsetPosition =
-      informationBlockElement[0].getBoundingClientRect().top +
-      window.scrollY +
-      1;
+    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top 
+      + window.scrollY
+      + 1;
 
     window.scrollTo({
       top: offsetPosition,
@@ -57,9 +58,7 @@ export function renderStickyFragmentInformationBlock(block) {
 
   const informationBlockHeader = block.querySelector('h2');
   if (informationBlockHeader) {
-    const copyOfInfoBlockHeader = informationBlockHeader.cloneNode(
-      informationBlockHeader,
-    );
+    const copyOfInfoBlockHeader = informationBlockHeader.cloneNode(informationBlockHeader);
     stickyInformationBlockHeaderContainer.appendChild(copyOfInfoBlockHeader);
     const informationBlockScrollButton = document.createElement('a');
     informationBlockScrollButton.setAttribute('role', 'button');
@@ -69,9 +68,7 @@ export function renderStickyFragmentInformationBlock(block) {
       'click',
       scrollToInformationBlock,
     );
-    stickyInformationBlockHeaderContainer.appendChild(
-      informationBlockScrollButton
-    );
+    stickyInformationBlockHeaderContainer.appendChild(informationBlockScrollButton);
   }
 
   const informationBlockFirstListItem = block.querySelector('li');
