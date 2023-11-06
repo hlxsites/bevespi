@@ -1,19 +1,15 @@
 export function onScroll() {
   const importantSafetyInformationSections = document.getElementsByClassName(
-    'important-safety-information'
+    'important-safety-information',
   );
   if (importantSafetyInformationSections.length > 0) {
     const offset = importantSafetyInformationSections[0].offsetTop;
     const stickySections = document.getElementsByClassName(
-      'sticky-fragment-block'
+      'sticky-fragment-block',
     );
     if (stickySections.length > 0) {
-      const importantSafetyInformationSectionsHeight =
-        stickySections[0].clientHeight;
-      const windowBottomPosition =
-        window.scrollY +
-        window.innerHeight -
-        importantSafetyInformationSectionsHeight;
+      const importantSafetyInformationSectionsHeight = stickySections[0].clientHeight;
+      const windowBottomPosition = window.scrollY + window.innerHeight - importantSafetyInformationSectionsHeight;
       if (windowBottomPosition <= offset) {
         stickySections[0].classList.add('fixed-section');
       } else {
@@ -25,7 +21,7 @@ export function onScroll() {
 
 export function scrollToInformationBlock() {
   const informationBlockElement = document.getElementsByClassName(
-    'important-safety-information'
+    'important-safety-information',
   );
 
   if (informationBlockElement.length > 0) {
@@ -49,7 +45,7 @@ export function renderStickyFragmentInformationBlock(block) {
   stickyInformationBlockHeader.classList.add('sticky-fragment-header');
   const stickyInformationBlockHeaderContainer = document.createElement('div');
   stickyInformationBlockHeaderContainer.classList.add(
-    'sticky-fragment-header-container'
+    'sticky-fragment-header-container',
   );
   stickyInformationBlockHeader.appendChild(
     stickyInformationBlockHeaderContainer
@@ -62,7 +58,7 @@ export function renderStickyFragmentInformationBlock(block) {
   const informationBlockHeader = block.querySelector('h2');
   if (informationBlockHeader) {
     const copyOfInfoBlockHeader = informationBlockHeader.cloneNode(
-      informationBlockHeader
+      informationBlockHeader,
     );
     stickyInformationBlockHeaderContainer.appendChild(copyOfInfoBlockHeader);
     const informationBlockScrollButton = document.createElement('a');
@@ -71,7 +67,7 @@ export function renderStickyFragmentInformationBlock(block) {
     informationBlockScrollButton.classList.add('sticky-fragment-scroll-button');
     informationBlockScrollButton.addEventListener(
       'click',
-      scrollToInformationBlock
+      scrollToInformationBlock,
     );
     stickyInformationBlockHeaderContainer.appendChild(
       informationBlockScrollButton
