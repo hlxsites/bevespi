@@ -9,8 +9,8 @@ export function onScroll() {
     );
     if (stickySections.length > 0) {
       const importantSafetyInformationSectionsHeight = stickySections[0].clientHeight;
-      const windowBottomPosition = window.scrollY 
-        + window.innerHeight 
+      const windowBottomPosition = window.scrollY
+        + window.innerHeight
         - importantSafetyInformationSectionsHeight;
       if (windowBottomPosition <= offset) {
         stickySections[0].classList.add('fixed-section');
@@ -27,7 +27,7 @@ export function scrollToInformationBlock() {
   );
 
   if (informationBlockElement.length > 0) {
-    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top 
+    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top
       + window.scrollY
       + 1;
 
@@ -48,9 +48,7 @@ export function renderStickyFragmentInformationBlock(block) {
   stickyInformationBlockHeaderContainer.classList.add(
     'sticky-fragment-header-container',
   );
-  stickyInformationBlockHeader.appendChild(
-    stickyInformationBlockHeaderContainer
-  );
+  stickyInformationBlockHeader.appendChild(stickyInformationBlockHeaderContainer);
   stickyInformationBlock.appendChild(stickyInformationBlockHeader);
   const stickyInformationBlockContent = document.createElement('div');
   stickyInformationBlockContent.classList.add('sticky-framgent-content');
@@ -74,9 +72,7 @@ export function renderStickyFragmentInformationBlock(block) {
   const informationBlockFirstListItem = block.querySelector('li');
   if (informationBlockFirstListItem) {
     const listContainer = document.createElement('ul');
-    const content = informationBlockFirstListItem.cloneNode(
-      informationBlockFirstListItem
-    );
+    const content = informationBlockFirstListItem.cloneNode(informationBlockFirstListItem);
     listContainer.appendChild(content);
     stickyInformationBlockContent.appendChild(listContainer);
   }
