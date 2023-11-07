@@ -688,7 +688,7 @@ async function loadHeader(header) {
  * Prepend isi fragment to the section
  * @param {HTMLElement} section section to prepend the isi fragment
  */
-async function prependIsiFragment(section, fragment) {
+async function appendIsiFragment(section, fragment) {
   if (fragment) {
     const fragmentSection = fragment.querySelector(':scope .section');
     if (fragmentSection) {
@@ -752,7 +752,7 @@ export {
   loadBlocks,
   loadCSS,
   loadFooter,
-  prependIsiFragment,
+  appendIsiFragment,
   loadHeader,
   loadScript,
   readBlockConfig,

@@ -11,7 +11,7 @@ import {
   loadBlocks,
   loadCSS,
   createOptimizedPicture,
-  prependIsiFragment,
+  appendIsiFragment,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -181,7 +181,7 @@ export async function loadFragment(path) {
 async function loadIsiFragment(section) {
   const path = '/fragments/important-safety-information';
   const fragment = await loadFragment(path);
-  await prependIsiFragment(section, fragment);
+  await appendIsiFragment(section, fragment);
   loadCSS(`${window.hlx.codeBasePath}/blocks/fragment/fragment.css`);
 }
 
