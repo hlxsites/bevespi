@@ -55,8 +55,8 @@ export function getEnvType(hostname = window.location.hostname) {
     'franklin.bevespi.com': 'live',
     'main--bevespi--hlxsites.hlx.page': 'preview',
     'main--bevespi--hlxsites.hlx.live': 'live',
-    'analytics--bevespi--hlxsites.hlx.page': 'preview',
-    'analytics--bevespi--hlxsites.hlx.live': 'live',
+    '286-analytics--bevespi--hlxsites.hlx.page': 'preview',
+    '286-analytics--bevespi--hlxsites.hlx.live': 'live',
   };
   return fqdnToEnvType[hostname] || 'dev';
 }
