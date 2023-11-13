@@ -1369,7 +1369,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
         max-height: unset;
     }
-    
+
     .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
         max-height: unset;
     }
@@ -1712,6 +1712,10 @@ h2 > br::after {
 
 .taking-bevespi-aerosphere main .section.columns-container .columns-row .columns-col h2 {
     margin-top: 0;
+}
+
+.faq main .hero.block.arrow-bottom > div:first-of-type picture {
+    bottom: -29px;
 }
 
 @media (min-width: 900px) {
