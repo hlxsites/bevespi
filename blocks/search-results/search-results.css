@@ -1,10 +1,15 @@
 main .section.hero-container + .section.search-results-container {
     padding-top: 70px;
+    padding-bottom: 0;
 }
 
 main .search-results {
     padding: 0;
     font-size: var(--body-font-size-s);
+}
+
+main .search-results h2 {
+    margin-top: 15px;
 }
 
 @media (min-width:900px) {
@@ -158,4 +163,8 @@ main #search-button span {
         border: 0;
         margin-bottom: 10px;
     }
+}
+
+.user-feedback-message {
+    padding-bottom: 0;
 }

@@ -28,6 +28,10 @@ main .section.fragment-container.important-safety-information p {
     font-size: var(--body-font-size-s-isi-fragment);
 }
 
+main .section.fragment-container.important-safety-information p a {
+    display: inline;
+}
+
 main .section.fragment-container > div {
     max-width: var(--page-max-width);
 }
@@ -137,6 +141,10 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     width: 30.4px;
     height: 30.4px;
     border-radius: 50%;
+}
+
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button:hover {
+    cursor: pointer;
 }
 
 main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::before {

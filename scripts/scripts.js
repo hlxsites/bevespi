@@ -37,7 +37,7 @@ export function loadScript(url, callback) {
   if (!script) {
     script = document.createElement('script');
     script.src = url;
-    script.async = true;
+    script.defer = true;
     head.append(script);
     script.onload = callback;
     return script;

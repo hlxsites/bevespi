@@ -23,28 +23,20 @@
 
 .related-links > div > div:first-of-type {
   flex-basis: 45%;
-  height: 150px;
+  min-height: 85px;
   position: relative;
   overflow: hidden;
 }
 
 .related-links > div > div:last-of-type {
   flex-basis: 55%;
-}
-
-.related-links picture {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 .related-links img {
-  max-width: unset;
+  object-fit: contain;
+  height: auto;
 }
 
 main .related-links .button-container {

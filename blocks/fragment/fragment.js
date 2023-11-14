@@ -50,7 +50,7 @@ export function onScroll() {
   }
 }
 
-function scrollToInformationBlock() {
+export function scrollToInformationBlock() {
   const informationBlockElement = document.getElementsByClassName(
     'important-safety-information',
   );

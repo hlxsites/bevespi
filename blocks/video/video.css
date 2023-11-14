@@ -1,5 +1,29 @@
 .video.block {
-  width: 645px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   margin: auto;
   padding: 20px 0;
+}
+
+.video.block .video-player {
+  width: 95%;
+}
+
+@media (min-width: 600px) {
+  .video.block .video-player {
+    width: 90%;
+    height: 270px;
+  }
+}
+
+@media (min-width: 900px) {
+  .video.block {
+    max-width: var(--page-max-width);
+  }
+
+  .video.block .video-player {
+    width: 90%;
+    height: 370px;
+  }
 }

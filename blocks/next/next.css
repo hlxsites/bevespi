@@ -16,7 +16,7 @@
   width: var(--next-block-width);
   position: absolute;
   right: calc(var(--next-block-width) * -1);
-  transition: 
+  transition:
     right 0.8s ease-in-out,
     width 0.8s ease-in-out;
 }
@@ -35,8 +35,7 @@
   font-weight: 400;
   border: 0;
   background-color: unset;
-  padding: 0;
-  padding-top: 11px;
+  padding: 5px 0 0;
 }
 
 .next.block a::after {
@@ -79,6 +78,10 @@
   .next.block {
     --next-block-height: 100px;
     --next-block-width: 723px;
+  }
+
+  .next.block a {
+    padding-top: 11px;
   }
 
   .next.block.active > div > div {

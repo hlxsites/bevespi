@@ -2,6 +2,11 @@ main .section.accordion-1-container {
   padding: 0;
 }
 
+main .section.accordion-1-container .default-content-wrapper {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .faq main .section.accordion-1-container {
   padding-top: 15px;
 }
@@ -25,6 +30,7 @@ main .section div.accordion-1-wrapper {
 .accordion-1 a.button:any-link {
   font-weight: var(--font-weight-bold);
   margin: 0;
+  display: unset;
 }
 
 .accordion-1 ul {

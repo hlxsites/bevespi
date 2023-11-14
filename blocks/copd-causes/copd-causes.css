@@ -53,6 +53,11 @@
     padding-bottom: 20px;
 }
 
+.block.copd-causes > div > div:first-child img {
+    height: 48px;
+    width: 48px;
+}
+
 .block.copd-causes > div:not(:last-child) > div:nth-child(3) {
     border-bottom: 1px solid #ccc;
 }

@@ -3,6 +3,11 @@ main .section.highlight-1-container {
   padding-right: 0;
 }
 
+main .section.highlight-1-container > div:first-of-type > p {
+  padding-left: 12px;
+  margin-bottom: 40px;
+}
+
 main .section div.highlight-1-wrapper {
   max-width: unset;
 }

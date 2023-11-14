@@ -6,20 +6,22 @@ export default function decorate(block) {
   [...block.querySelectorAll('div:nth-of-type(-n+2)')].forEach((div) => div.remove());
 
   const tagDiv = document.createElement('div');
-  tagDiv.id = `kaltura_player_${playerID}`;
-  tagDiv.style.width = '645px';
-  tagDiv.style.height = '370px';
+  tagDiv.classList.add('video-player');
+  const tagDivId = `kaltura_player_${playerID}`;
+  tagDiv.id = tagDivId;
   block.append(tagDiv);
 
-  loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521', () => {
-    // eslint-disable-next-line
-    kWidget.embed({
-      targetId: `kaltura_player_${playerID}`,
-      wid: '_432521',
-      uiconf_id: 52784152,
-      flashvars: {},
-      cache_st: playerID,
-      entry_id: entryID,
+  window.setTimeout(() => {
+    loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521', () => {
+      // eslint-disable-next-line
+      kWidget.embed({
+        targetId: tagDivId,
+        wid: '_432521',
+        uiconf_id: 52784152,
+        flashvars: {},
+        cache_st: playerID,
+        entry_id: entryID,
+      });
     });
-  });
+  }, 3200);
 }

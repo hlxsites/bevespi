@@ -73,8 +73,13 @@ main .hero h1 {
 
 .search main .hero h1,
 .contact-us main .hero h1,
-.about-copd main .hero h1 {
-  margin: 20px 0 60px;
+.about-copd main .hero h1,
+.side-effects main .hero h1 {
+  margin: 30px 0 50px;
+}
+
+.taking-bevespi-aerosphere main .hero h1 {
+  margin-bottom: 50px;
 }
 
 @media (min-width: 900px) {
@@ -87,6 +92,11 @@ main .hero h1 {
     margin-top: 62px;
     margin-bottom: 110px;
   }
+
+  .taking-bevespi-aerosphere main .hero h1 {
+    margin: 30px 0 50px;
+  }
+  
 }
 
 main .hero.home h1,
@@ -140,10 +150,19 @@ main .hero > div:nth-of-type(n+2) {
   display: flex;
 }
 
+main .hero > div:nth-of-type(n+2) div:first-of-type {
+  max-width: 270px;
+}
+
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
-  flex-basis: 136px;
   margin-left: auto;
-  transform: translateY(-63px);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p {
+  width: 136px;
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(n+3) {
@@ -152,10 +171,6 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(n+3) {
 
 main .hero > div:nth-of-type(n+2) >div:first-of-type:last-of-type {
   max-width: 67%;
-}
-
-main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
-  flex-basis: 44%;
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {
@@ -203,6 +218,19 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
     flex-basis: 340px;
     transform: translateY(15px);
+    position: initial;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p {
+    width: unset;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:first-of-type {
+    max-width: unset;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
+    flex-basis: 44%;
   }
 
   main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {

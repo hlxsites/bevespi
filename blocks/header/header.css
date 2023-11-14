@@ -6,12 +6,17 @@ header .nav-top {
   background-color: var(--background-grey-1);
 }
 
-header .nav-top.expanded {
-  height: 100%;
+header .expanded .nav-top {
+  height: unset;
 }
 
 header .nav-top > div {
   display: flex;
+}
+
+header .expanded .nav-top > div .search form {
+  display: flex;
+  padding-top: 20px;
 }
 
 header .nav-top ul {
@@ -40,25 +45,40 @@ header .nav-top .search {
   display: none;
 }
 
+header .expanded .nav-top .search {
+  display: block;
+  z-index: 12;
+  flex: 1;
+}
+
 header .nav-top .search label {
   display: none;
 }
 
 header .nav-top .search input {
   background-color: var(--background-grey-2);
-  border: none;
   outline: 4px solid var(--background-grey-2);
+  border: none;
   height: 39px;
   padding-left: 8px;
-  margin-top: -3px;
   max-width: 155px;
   font-size: 1.3rem;
   color: var(--text-color-grey-1);
 }
 
+header .expanded .nav-top .search input {
+  outline: unset;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 header .nav-top .search input:focus {
   background-color: var(--background-grey-3);
   outline: 4px solid var(--background-grey-3);
+}
+
+header .expanded .nav-top .search input:focus {
+  outline: unset;
 }
 
 header .nav-top .search input:focus::placeholder {
@@ -78,10 +98,13 @@ header .nav-top .search button {
   border: none;
 }
 
+header .expanded .nav-top .search button::after {
+  display: none;
+}
+
 header .nav-middle {
   height: 123px;
   font-size: var(--body-font-size-xxxxs);
-  overflow: hidden;
   line-height: 11px;
   padding: 0 12px;
   position: relative;
@@ -111,6 +134,28 @@ header .nav-middle ul {
 @media (min-width: 900px) {
   header .nav-middle ul {
     padding-inline-start: 15px;
+  }
+
+  header .expanded .nav-top {
+    height: 40px;
+  }
+
+  header .expanded .nav-top > div {
+    flex-direction: row;
+  }
+
+  header .expanded .nav-top > div .search form {
+    padding-top: 0;
+  }
+
+  header .expanded .nav-top .search {
+    flex: unset;
+  }
+
+  header .expanded .nav-top .search input {
+    outline: 4px solid var(--background-grey-2);
+    padding-top: 4px;
+    margin-top: -3px;
   }
 }
 
@@ -190,7 +235,7 @@ header .expanded .nav-bottom {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 5;
+  z-index: 11;
 }
 
 header .nav-top li:first-of-type {
@@ -201,21 +246,25 @@ header .nav-middle > div > div > div {
   position: relative;
 }
 
+header .expanded .nav-top > div {
+  flex-direction: row-reverse;
+}
+
 header .nav-middle > div > div > div div:nth-of-type(1) {
   position: relative;
-  top: 38px;
+  top: 12px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) {
   font-weight: 500;
   position: relative;
-  top: 34px;
+  top: 5px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p {
   display: inline-block;
   position: absolute;
-  top: -85px;
+  top: 37px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p,
@@ -284,10 +333,11 @@ header .nav-middle > div > div > div div:nth-of-type(3) span.close {
 }
 
 header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
-  z-index: 10;
+  z-index: 12;
   background-image: url('/icons/icon_close-x.png');
   background-size: 15px 15px;
   background-position: 34px 5px;
+  top: -40px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(3) .close {
@@ -325,6 +375,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
   header .nav-middle {
     height: 132px;
     font-size: var(--body-font-size-xxs);
+    overflow: hidden;
   }
 
   header .nav-middle .expand-top {

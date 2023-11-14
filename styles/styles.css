@@ -78,7 +78,7 @@
     --heading-font-size-xs: 1.4rem;
 
     /* nav height */
-    --nav-height: 143px;
+    --nav-height: 190px;
 
     /* page max width */
     --page-max-width: 1002px;
@@ -164,6 +164,18 @@
     descent-override: 17.37%;
     line-gap-override: 17.37%;
     size-adjust: 95%;
+}
+
+@media (min-width: 300px) {
+    :root {
+        --nav-height: 153px;
+    }
+}
+
+@media (min-width: 600px) {
+    :root {
+        --nav-height: 143px;
+    }
 }
 
 @media (min-width: 900px) {
@@ -326,14 +338,6 @@ a:not(.button):hover {
     font-weight: var(--link-font-weight-hover);
 }
 
-.copd-treatment .button-container a {
-    border: unset;
-    background-color: unset;
-    font-size: var(--body-font-size-s);
-    padding: 0;
-    text-transform: unset;
-}
-
 .copd-resources main .button-container a {
     border: 0;
     font-size: var(--body-font-size-s);
@@ -341,33 +345,47 @@ a:not(.button):hover {
     padding: 10px 39px 10px 25px;
 }
 
-@media (min-width: 900px) {
-    .copd-resources main .button-container a {
-        margin: 0 auto;
-    }
-}
-
 .copd-treatment .columns .button-container {
     border-top: 1px solid var(--color-grey-5);
     position: absolute;
     bottom: 45px;
-    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 12px;
+    padding-top: 30px;
+    padding-right: 100px;
+}
+
+@media (min-width: 900px) {
+    .copd-resources main .button-container a {
+        margin: 0 auto;
+    }
+
+    .copd-treatment .columns .button-container {
+        padding-right: unset;
+        padding-bottom: 30px;
+    }
 }
 
 .copd-treatment .columns .button-container a {
-    margin-top: 30px;
+    display: unset;
+    margin: unset;
+    font-weight: 500;
+    padding: 0;
+    border-radius: unset;
+    font-size: var(--body-font-size-s);
+    line-height: 16px;
+    text-transform: unset;
 }
 
-.copd-treatment .button-container a::after {
-    content: "";
+.copd-treatment .columns .button-container a::after {
+    content: '';
     width: 20px;
     height: 20px;
-    background-image: url('/icons/icon_pink-arrow-right-md.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    display: block;
-    margin-left: auto;
-    transform: translate(10px, -2px);
+    background: url('/icons/icon_pink-arrow-right-md.png') no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: relative;
 }
 
 a.button:any-link, button {
@@ -402,6 +420,17 @@ a.button:any-link::after, button::after {
 
 a.button:hover, a.button:focus, button:hover, button:focus {
     cursor: pointer;
+}
+
+.taking-bevespi-aerosphere a.button:any-link {
+    font-size: 1.1rem;
+    margin: 14px auto;
+}
+
+@media(min-width: 900px) {
+    .taking-bevespi-aerosphere a.button:any-link {
+        font-size: 1.7rem;
+    }
 }
 
 button:disabled, button:disabled:hover {
@@ -487,6 +516,10 @@ main blockquote p::after {
     width: 100%;
 }
 
+.taking-bevespi-aerosphere .columns-row img {
+    transform: scale(1);
+}
+
 main .section, .section .reset-spacing {
     padding: 20px 16px;
 }
@@ -514,7 +547,7 @@ main .section.buttons {
 }
 
 .home .columns-row img {
-    transform: scale(0.67);
+    transform: scale(0.57);
 }
 
 @media (min-width: 900px) {
@@ -569,13 +602,26 @@ main .section.buttons {
     }
 }
 
+.columns-row > div > div {
+    align-self: center;
+}
+
 .home .columns-row > div {
     padding-bottom: 50px;
 }
 
+
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
+    }
+
+    .home .columns-row > div .columns-img-col {
+        max-height: unset !important;
+    }
+
+    .home .columns-row > div .columns-img-col > picture > img {
+        transform-origin: unset;
     }
 
     .home .columns-row:nth-of-type(2) > div {
@@ -627,6 +673,10 @@ main .section[data-background] > div {
     padding-right: 16px;
 }
 
+main .section.accordion-2-container.video-container p {
+    padding: 0 12px;
+}
+
 @media (min-width: 600px) {
     main .section[data-background] > div {
         padding-left: 32px;
@@ -636,6 +686,7 @@ main .section[data-background] > div {
     main .section.accordion-2-container.video-container h2 {
         font-size: 4.5rem;
         margin-top: 0;
+        padding-left: 0;
     }
 
     main .section.accordion-2-container.video-container p {
@@ -668,6 +719,10 @@ main .section.small-heading h1 {
 
     main .section.centered a.button:any-link {
         margin: auto;
+    }
+
+    main .section.accordion-2-container.video-container p {
+        padding: 0;
     }
 }
 
@@ -706,6 +761,7 @@ main div:not(.isi) .default-content-wrapper h2 {
 
 main .section.accordion-2-container.video-container h2 {
     font-size: var(--heading-font-size-xxl);
+    padding-left: 12px;
 }
 
 .what-is-copd div.boxes.block > div h2 {
@@ -721,11 +777,13 @@ main .section.accordion-2-container.video-container h2 {
 
 main .section.accordion-2-container.video-container .accordion-2 h2 {
     font-size: 1.4rem;
+    padding-left: 20px;
 }
 
 @media (min-width: 900px) {
     main .section.accordion-2-container.video-container .accordion-2 h2 {
         font-size: 1.8rem;
+        padding-left: 0;
     }
 }
 
@@ -787,6 +845,29 @@ main .section.small-vertical-margins {
     }
 }
 
+@media(max-width: 900px) {
+    .copd-treatment main .hero {
+        padding: 0;
+    }
+
+    .side-effects main .hero {
+        padding: 0;
+    }
+
+    .copd-treatment main .hero div:first-of-type > div p {
+        margin: 0;
+    }
+
+    main .hero > div:nth-of-type(n+2) > div h1 {
+        margin: 30px 0 50px;
+    }
+
+    .copd-resources main .hero > div:nth-of-type(n+2) > div h1 {
+        margin: 10px 0 70px;
+        max-width: 150px;
+    }
+}
+
 .copd-treatment .columns-row {
     position: relative;
     padding-bottom: 125px;
@@ -807,6 +888,10 @@ main .section.small-vertical-margins {
 
 .copd-treatment .columns-60-40 .columns-img-col {
     order: 3;
+}
+
+.home .columns-row > div .columns-img-col {
+    max-height: 190px;
 }
 
 @media (min-width: 900px) {
@@ -842,19 +927,58 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
+@media (max-width: 900px) {
+    .faq main .section.hero-container + .section {
+        padding-top: 15px;
+    }
+}
+
 .getting-started main .section:nth-of-type(6) {
     background-image: url('../images/bg-section-2.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
+.copd-symptoms-page div.default-content-wrapper a:any-link {
+    font-weight: 400;
+}
+
+.getting-started main div:not(.isi) .default-content-wrapper .button-container a {
+    margin: auto;
+    font-size: 1.3rem;
+}
+
 .copd-resources main .section.hero-container + .section {
-    padding-top: 32px;
+    padding-top: 0;
+}
+
+.copd-resources main .section.hero-container + .section > div > h2 {
+    margin-bottom: 40px;
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container {
+    padding: 30px 25px 30px 39px;
+    margin: 35px 0;
+    border-top: 1px solid var(--highlight-background-color);
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container a {
+    margin: 0;
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container > em {
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 900px) {
     .copd-resources main .section.hero-container + .section {
         padding-top: 0;
+    }
+
+    .copd-resources main .section.hero-container + .section > div > p.button-container {
+        padding: 20px 25px 20px 39px;
     }
 }
 
@@ -867,18 +991,29 @@ main .section.hero-container + .section {
     margin-bottom: 15px;
 }
 
-.copd-resources main .button-container a::after {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url("/icons/icon_pink-arrow-right-md.png") no-repeat;
-    background-size: contain;
-    margin-left: 15px;
-}
-
 .copd-resources main .section.isi .button-container a::after {
     display: none;
+}
+
+.copd-resources main .section.buttons > div > p.button-container > a::after {
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container a::after {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+@media (min-width: 600px) {
+    .copd-resources main .section.hero-container + .section > div > p.button-container a::after {
+        margin: 0 0 0 15px;
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .what-is-copd .default-content-wrapper {
@@ -1066,13 +1201,9 @@ main .section.zero-space-bottom {
     }
 }
 
-.getting-started main div:not(.isi) .default-content-wrapper ul {
-    margin: 0;
-    padding: 10px;
-}
-
 .getting-started main div:not(.isi) .default-content-wrapper li {
     padding-bottom: 10px;
+    margin: 0;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper p {
@@ -1085,7 +1216,12 @@ main .section.zero-space-bottom {
     max-height: 194px;
 }
 
+.home .columns-row > div .columns-img-col > picture > img {
+    transform-origin: top;
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper img {
+    transform-origin: top;
     transform: scale(0.6);
 }
 
@@ -1131,13 +1267,15 @@ main .section.centered .accordion-2 {
     color: var(--color-blue-2);
 }
 
-main .section.centered p:has(picture:first-child:last-child) {
-    text-align: center;
-}
-
 .getting-started main div:not(.isi) .default-content-wrapper .button-container + p {
     border-top: 1px solid var(--color-grey-5);
     padding-top: 43px;
+}
+
+.about-copd main .section.what-is-copd > div:nth-of-type(3) > p,
+.about-copd main .section.what-is-copd > div:nth-of-type(5) > p,
+main .section.centered p:has(picture:first-child:last-child) {
+    text-align: center;
 }
 
 .breathing-room main .section.tabs-container > div:first-child p:last-of-type {
@@ -1161,6 +1299,14 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin-top: 0;
 }
 
+.getting-started main .section p:has(picture:first-child:last-child):first-of-type {
+    max-height: 80px;
+}
+
+.getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
+    max-height: 140px;
+}
+
 .breathing-room main .section.information-contact div p picture img {
     min-width: 50px;
 }
@@ -1181,6 +1327,18 @@ main .section.centered p:has(picture:first-child:last-child) {
 @media (min-width: 600px) {
     .breathing-room main .section.information-contact div p {
         font-size: 1.4rem;
+    }
+
+    .getting-started main div:not(.isi) .default-content-wrapper img {
+        transform: scale(0.8);
+    }
+
+    .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
+        max-height: 100px;
+    }
+
+    .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
+        max-height: 180px;
     }
 }
 
@@ -1206,6 +1364,14 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
         font-size: 2rem;
     }
+
+    .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
+        max-height: unset;
+    }
+
+    .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
+        max-height: unset;
+    }
 }
 
 .getting-started main .section.grey {
@@ -1217,16 +1383,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin: 25px auto 30px;
     padding-bottom: 15px;
 }
-
-.copd-symptoms-page div.default-content-wrapper a:any-link {
-    font-weight: 400;
-}
-
-.getting-started main div:not(.isi) .default-content-wrapper .button-container a {
-    margin: auto;
-    font-size: 1.3rem;
-}
-
 
 .what-is-copd {
     font-size: var(--body-font-size-s);
@@ -1343,6 +1499,7 @@ h2 > br {
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper img {
+        transform-origin: unset;
         transform: scale(1);
     }
 
@@ -1519,7 +1676,67 @@ h2 > br::after {
     padding-top: 0;
 }
 
+.hero.block.contact-us-downarrow::after,
+.hero.block.how-to-use-bevespi-inhaler-downarrow::after,
+.hero.block.bevespi-side-effects-downarrow::after,
+.hero.block.bevespi-faqs-downarrow::after,
+.taking-bevespi-aerosphere main .section.accordion-2-container::after,
+.hero.block.copd-treatment-downarrow::after {
+    display: block;
+    content: " ";
+    width: 43px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 43px 20px;
+    position: relative;
+    left: calc(50% - 22px);
+    bottom: -20px;
+}
+
+.hero.block.copd-treatment-downarrow::after {
+    background-image: url('../images/how-section-2-downarrow-mobile.png');
+}
+
+.hero.block.how-to-use-bevespi-inhaler-downarrow::after {
+    background-image: url('../icons/bg_hero-taking-mobile_2.png');
+    bottom: -29px;
+}
+
+.taking-bevespi-aerosphere main .section.accordion-2-container::after {
+    background-image: url('../images/how-section-4-down-arrow-grey.png');
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) h2 {
+    margin-bottom: 0;
+}
+
+.taking-bevespi-aerosphere main .section.columns-container .columns-row .columns-col h2 {
+    margin-top: 0;
+}
+
+.hero.block.bevespi-side-effects-downarrow::after {
+    background-image: url('../images/side-effect-section-2-downarrow.png');
+}
+
+.hero.block.bevespi-faqs-downarrow::after {
+    background-image: url('../images/bg_hero_faqs_down-arrow_mobile.png');
+    bottom: -29px;
+}
+
 @media (min-width: 900px) {
+    .taking-bevespi-aerosphere .columns-col:first-of-type {
+        padding-left: 15px;
+        padding-right: 65px;
+    }
+
+    .hero.block.bevespi-faqs-downarrow::after {
+        background-image: url('../images/bg_hero_faqs_down-arrow.png');
+    }
+
+    .taking-bevespi-aerosphere .columns-col:first-of-type > p{
+        margin-bottom: 20px;
+    }
+
     .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
         flex: 0 0 560px;
     }
@@ -1529,17 +1746,9 @@ h2 > br::after {
     }
 
     .hero.block.contact-us-downarrow::after,
-    .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
     .hero.block.bevespi-side-effects-downarrow::after,
+    .hero.block.bevespi-faqs-downarrow::after,
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
-        display: block;
-        content: " ";
-        width: 43px;
-        height: 20px;
-        background-repeat: no-repeat;
-        background-size: 43px 20px;
-        position: relative;
-        left: calc(50% - 22px);
         bottom: -29px;
     }
 
@@ -1551,19 +1760,34 @@ h2 > br::after {
         background-image: url('../images/bg_hero-taking_2.png');
     }
 
-    .hero.block.bevespi-side-effects-downarrow::after {
-        background-image: url('../images/side-effect-section-2-downarrow.png');
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
+        transform: translateY(-9px);
     }
 
-    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
-        background-image: url('../images/how-section-4-down-arrow-grey.png');
-        transform: translateY(-9px);
+    .hero.block.copd-treatment-downarrow::after {
+        display: none;
     }
 }
 
 .home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container,
 .home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
     max-width: 325px;
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container {
+    margin-top: 10px;
+}
+
+div.section:nth-of-type(2) {
+    padding-bottom: 0;
+}
+
+.contact-us main h2#important-safety-information {
+    margin-top: 0;
+}
+
+.taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:nth-of-type(3) {
+    margin-bottom: 50px;
 }
 
 @media (min-width: 900px) {
@@ -1580,7 +1804,7 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-  
+
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
     }
@@ -1595,6 +1819,10 @@ h2 > br::after {
 
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
+    }
+
+    .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:nth-of-type(3) {
+        max-width: 855px;
     }
 
     .taking-bevespi-aerosphere .accordion-2-wrapper + .columns-wrapper .columns-row:first-of-type > div:first-of-type {
@@ -1613,10 +1841,11 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .next.block .next-small {
         width: 115px;
     }
-  
+
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
-        .getting-started main .hero.block picture {
+        .getting-started main .hero.block picture,
+        .faqs main .hero.block picture {
             top: unset;
         }
     }
@@ -1626,7 +1855,7 @@ h2 > br::after {
     }
 
     .copd-resources main .hero.block h1 {
-        margin: 1px 0 113px;
+        margin: 30px 0 83px;
     }
 
     .copd-resources main .default-content-wrapper ul {
@@ -1649,4 +1878,99 @@ h2 > br::after {
 
 .getting-started main .section.hero-container + .section + .section {
     margin-top: -673px;
+}
+
+.sitemap main .section:nth-of-type(2) ul {
+    list-style: none;
+    max-width: 578px;
+    margin: 30px auto;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li {
+    font-size: 2.3rem;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
+    font-size: 1.2rem;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > a:any-link {
+    border-bottom: 1px solid #ccc;
+    padding-left: 24px;
+    width: 215px;
+    padding-bottom: 15px;
+    transform: translateX(-25px);
+    color: var(--link-color);
+    margin-top: 20px;
+}
+
+.getting-started main div:not(.isi) .default-content-wrapper ul {
+    margin: 0;
+    padding:  0 10px 10px;
+}
+
+.sitemap main .section:nth-of-type(2) div > ul > li > ul,
+.sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
+    border: 1px solid #172660;
+}
+
+.sitemap main .section:nth-of-type(2) div > ul > li > ul {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: -18px;
+}
+
+.sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
+    border-left: 0;
+    border-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li > ul {
+    padding-left: 0;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > ul {
+    margin-top: 15px;
+    margin-bottom: 23px;
+}
+
+@media (min-width: 900px) {
+    .sitemap main .section:nth-of-type(2) ul > li {
+        font-size: 2.8rem;
+    }
+
+    .sitemap main .section:nth-of-type(2) ul > li > ul > li {
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
+        font-size: 1.6rem;
+    }
+
+    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li:nth-of-type(2) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-top: 50px;
+    }
+}
+
+.sitemap main .section:nth-of-type(2) .section.hero-container + .section {
+    padding-bottom: 0;
+}
+
+.sitemap main .section:nth-of-type(2) .section.isi {
+    padding-top: 2px;
+}
+
+@media (max-width: 900px) {
+    h1#about-copd {
+        max-width: 150px;
+    }
 }
