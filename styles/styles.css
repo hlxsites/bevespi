@@ -850,6 +850,10 @@ main .section.small-vertical-margins {
         padding: 0;
     }
 
+    .side-effects main .hero {
+        padding: 0;
+    }
+
     .copd-treatment main .hero div:first-of-type > div p {
         margin: 0;
     }
@@ -1197,11 +1201,6 @@ main .section.zero-space-bottom {
     }
 }
 
-.getting-started main div:not(.isi) .default-content-wrapper ul {
-    margin: 0;
-    padding:  0 10px 10px;
-}
-
 .getting-started main div:not(.isi) .default-content-wrapper li {
     padding-bottom: 10px;
     margin: 0;
@@ -1369,7 +1368,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
         max-height: unset;
     }
-    
+
     .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
         max-height: unset;
     }
@@ -1714,6 +1713,10 @@ h2 > br::after {
     margin-top: 0;
 }
 
+.hero.block.bevespi-side-effects-downarrow::after {
+    background-image: url('../images/side-effect-section-2-downarrow.png');
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
@@ -1744,10 +1747,6 @@ h2 > br::after {
 
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after {
         background-image: url('../images/bg_hero-taking_2.png');
-    }
-
-    .hero.block.bevespi-side-effects-downarrow::after {
-        background-image: url('../images/side-effect-section-2-downarrow.png');
     }
 
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
@@ -1867,6 +1866,95 @@ div.section:nth-of-type(2) {
 
 .getting-started main .section.hero-container + .section + .section {
     margin-top: -673px;
+}
+
+.sitemap main .section:nth-of-type(2) ul {
+    list-style: none;
+    max-width: 578px;
+    margin: 30px auto;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li {
+    font-size: 2.3rem;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
+    font-size: 1.2rem;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > a:any-link {
+    border-bottom: 1px solid #ccc;
+    padding-left: 24px;
+    width: 215px;
+    padding-bottom: 15px;
+    transform: translateX(-25px);
+    color: var(--link-color);
+    margin-top: 20px;
+}
+
+.getting-started main div:not(.isi) .default-content-wrapper ul {
+    margin: 0;
+    padding:  0 10px 10px;
+}
+
+.sitemap main .section:nth-of-type(2) div > ul > li > ul,
+.sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
+    border: 1px solid #172660;
+}
+
+.sitemap main .section:nth-of-type(2) div > ul > li > ul {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: -18px;
+}
+
+.sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
+    border-left: 0;
+    border-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li > ul {
+    padding-left: 0;
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > ul {
+    margin-top: 15px;
+    margin-bottom: 23px;
+}
+
+@media (min-width: 900px) {
+    .sitemap main .section:nth-of-type(2) ul > li {
+        font-size: 2.8rem;
+    }
+    
+    .sitemap main .section:nth-of-type(2) ul > li > ul > li {
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
+        font-size: 1.6rem;
+    }
+
+    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li:nth-of-type(2) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-top: 50px;
+    }
+}
+
+.sitemap main .section:nth-of-type(2) .section.hero-container + .section {
+    padding-bottom: 0;
+}
+
+.sitemap main .section:nth-of-type(2) .section.isi {
+    padding-top: 2px;
 }
 
 @media (max-width: 900px) {
