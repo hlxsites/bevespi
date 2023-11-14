@@ -7,5 +7,5 @@ sitemaps:
   bevespi-stage:
     origin: https://franklin.bevespi.com
     source: /query-index.json
-    destination: /sitemap.xml
+    destination: /sitemap_stage.xml
     lastmod: YYYY-MM-DD
