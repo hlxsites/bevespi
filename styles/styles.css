@@ -1714,6 +1714,10 @@ h2 > br::after {
     margin-top: 0;
 }
 
+.hero.block.bevespi-side-effects-downarrow::after {
+    background-image: url('../images/side-effect-section-2-downarrow.png');
+}
+
 .hero.block.bevespi-faqs-downarrow::after {
     background-image: url('../images/bg_hero_faqs_down-arrow_mobile.png');
     bottom: -29px;
