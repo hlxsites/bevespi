@@ -1,5 +1,6 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/aem.js';
+import { readBlockConfig, decorateIcons, getMetadata } from '../../scripts/aem.js';
 import { decorateExternalLinks } from '../../scripts/scripts.js';
+import { loadFragment, renderStickyFragmentInformationBlock } from '../fragment/fragment.js';
 
 /**
  * loads and decorates the footer
@@ -30,5 +31,13 @@ export default async function decorate(block) {
     decorateIcons(footer);
     decorateExternalLinks(footer);
     block.append(footer);
+  }
+
+  const path = getMetadata('isi');
+  const fragment = await loadFragment(path);
+  console.log(fragment);
+  if (fragment) {
+    const main = document.querySelector('main');
+    main.append(fragment);
   }
 }
