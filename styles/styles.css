@@ -536,10 +536,6 @@ main blockquote p::after {
     width: 100%;
 }
 
-.taking-bevespi-aerosphere .columns-row img {
-    transform: scale(1);
-}
-
 main .section, .section .reset-spacing {
     padding: 20px 16px;
 }
