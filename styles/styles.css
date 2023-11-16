@@ -1785,6 +1785,10 @@ h2 > br::after {
     bottom: -29px;
 }
 
+.faq .accordion-1 .button {
+    border: 1px solid transparent;
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
