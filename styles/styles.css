@@ -1458,7 +1458,6 @@ main .section.centered p:has(picture:first-child:last-child) {
 h1 > br,
 h2 > br {
     content:"";
-    display: inline;
 }
 
 .copd-stages-page div.boxes.block div p br{
@@ -1700,7 +1699,6 @@ h2 > br {
 h1 > br::after,
 h2 > br::after {
     content: " ";
-    display: inline-block;
 }
 
 @media (min-width: 900px) {
