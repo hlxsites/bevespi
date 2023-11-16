@@ -880,6 +880,10 @@ main .section.small-vertical-margins {
         margin: 0;
     }
 
+    .contact-us main .hero div:first-of-type > div p {
+        margin: -18px 0;
+    }
+
     main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
         margin: 30px 0 50px;
     }
@@ -1734,6 +1738,11 @@ h2 > br::after {
     bottom: -20px;
 }
 
+.hero.block.contact-us-downarrow::after {
+    background-image: url('../images/sitemap-section-2-downarrow-mobile.png');
+    bottom: -30px;
+}
+
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
     bottom: -145px;
     z-index: 2;
@@ -1895,14 +1904,6 @@ div.section:nth-of-type(2) {
         width: 115px;
     }
 
-    @media (min-width: 1400px) {
-        .copd-resources main .hero.block picture,
-        .getting-started main .hero.block picture,
-        .faqs main .hero.block picture {
-            top: unset;
-        }
-    }
-
     .getting-started main .hero.block h1 {
         margin: 30px 0 113px;
     }
@@ -1918,6 +1919,14 @@ div.section:nth-of-type(2) {
     .contact-us main .section.hero-container + .section {
         padding-top: 55px;
         padding-bottom: 0;
+    }
+}
+
+@media (max-width: 900px), (min-width: 1400px) {
+    .copd-resources main .hero.block picture,
+    .getting-started main .hero.block picture,
+    .faqs main .hero.block picture {
+        top: unset;
     }
 }
 

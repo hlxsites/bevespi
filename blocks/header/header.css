@@ -30,14 +30,39 @@ header .nav-top ul {
 
 header .nav-top li {
   padding-left: 9px;
-  padding-right: 9px;
+  padding-right: 10px;
   line-height: 16px;
+}
+
+header .nav-bottom li {
+  list-style-type: none;
+  border-bottom: 2px solid var(--color-blue-1);
+  padding: 15px 0 15px 15px;
+  line-height: 1;
+  display: flex;
 }
 
 header .nav-top li:nth-of-type(n+2)::before {
   content: "\2022";
   position: relative;
   left: -8px;
+  top: 2px;
+  font-size: 1.4rem;
+}
+
+header .nav-top li:nth-of-type(n+2) {
+  position: relative;
+  bottom: 2px;
+}
+
+@media (min-width: 900px) {
+  header .nav-top li:nth-of-type(n+2)::before {
+    top: 1px;
+  }
+
+  header .nav-top li:nth-of-type(n+2) {
+    bottom: 1px;
+  }
 }
 
 header .nav-top .search {
@@ -64,6 +89,7 @@ header .nav-top .search input {
   max-width: 155px;
   font-size: 1.3rem;
   color: var(--text-color-grey-1);
+  border-radius: 0;
 }
 
 header .expanded .nav-top .search input {
@@ -98,6 +124,12 @@ header .nav-top .search button {
   border: none;
 }
 
+@supports (-webkit-touch-callout: none) {
+  header .nav-top .search button {
+    height: 43px;
+  }
+}
+
 header .expanded .nav-top .search button::after {
   display: none;
 }
@@ -108,6 +140,12 @@ header .nav-middle {
   line-height: 11px;
   padding: 0 12px;
   position: relative;
+}
+
+@media (max-width: 899px) {
+  header .nav-middle {
+    padding: 0 8px;
+  }
 }
 
 header .nav-middle .expand-top {
@@ -182,17 +220,15 @@ header .nav-bottom ul {
   transform: translateY(50px);
 }
 
-header .nav-bottom li {
-  list-style-type: none;
-  border-bottom: 2px solid var(--color-blue-1);
-  padding: 15px 0 15px 15px;
-  line-height: 1;
-  display: flex;
+@media (max-width: 899px) {
+  header .nav-bottom ul {
+    margin-top: 25px;
+  }
 }
 
 header .nav-bottom li::after {
   content: "";
-  width: 18px;
+  width: 19px;
   height: 16px;
   background-image: url('/icons/icon_pink-arrow-right-md.png');
   background-size: 16px 16px;
@@ -264,7 +300,7 @@ header .nav-middle > div > div > div div:nth-of-type(2) {
 header .nav-middle > div > div > div div:nth-of-type(2) p {
   display: inline-block;
   position: absolute;
-  top: 37px;
+  top: 52px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p,
@@ -326,6 +362,12 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
   background-size: 17px 13px;
   padding: 8px 14px 8px 4px;
   cursor: pointer;
+}
+
+@media (max-width: 899px) {
+  header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
+    padding-right: 0;
+  }
 }
 
 header .nav-middle > div > div > div div:nth-of-type(3) span.close {
@@ -537,6 +579,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
 
 @media (max-width: 899px) {
   body.nav-expanded {
-    overflow-y: hidden;
+    overflow: hidden;
+    position: fixed;
   }
 }
