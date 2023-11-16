@@ -1462,6 +1462,7 @@ h2 > br {
 
 .copd-stages-page div.boxes.block div p br{
     display: none;
+    visibility: none;
 }
 
 .copd-stages-page div.boxes.block > div{
