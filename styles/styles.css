@@ -330,6 +330,10 @@ main img {
     }
 }
 
+a[href^="tel"] {
+    color: var(--text-color) !important;
+}
+
 /* buttons */
 a:not(.button):any-link {
     display: inline-block;
@@ -752,6 +756,10 @@ main .section.green-accent .default-content-wrapper em {
     color: var(--color-green);
     font-style: normal;
     font-weight: 500;
+}
+
+main .section.green-accent .default-content-wrapper em a[href^="tel"] {
+    color: var(--color-green) !important;
 }
 
 main .section.green-accent .default-content-wrapper em u {
