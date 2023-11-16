@@ -467,10 +467,31 @@ a.button.secondary:any-link {
     font-size: 1.4rem;
 }
 
+main .section.white-text h1 {
+    color: white;
+}
+
+main .section.small-heading h1 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+
+.breathing-room main .section.small-heading h1 {
+    font-size: var(--heading-font-size-m);
+}
+
+.side-effects main div.hero > div:nth-of-type(n+2) > div h1 {
+    margin: 50px 0 30px;
+}
+
 @media (min-width: 900px) {
     .side-effects main .section a.button.secondary:any-link {
         font-size: 1.6rem;
         font-weight: var(--font-weight-regular);
+    }
+
+    .side-effects main div.hero > div:nth-of-type(n+2) > div h1 {
+        margin: 30px 0 50px;
     }
 }
 
@@ -723,19 +744,6 @@ main .section.accordion-2-container.video-container p {
 /* section metadata - text align and color */
 main .section.white-text {
     color: white;
-}
-
-main .section.white-text h1 {
-    color: white;
-}
-
-main .section.small-heading h1 {
-    font-size: 1.9rem;
-    text-transform: uppercase;
-}
-
-.breathing-room main .section.small-heading h1 {
-    font-size: var(--heading-font-size-m);
 }
 
 @media (min-width: 900px) {
