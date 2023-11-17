@@ -564,7 +564,8 @@ main blockquote p::after {
 }
 
 .taking-bevespi-aerosphere .columns-row img {
-    transform: scale(1);
+    height: 250px;
+    width: 250px;
 }
 
 main .section, .section .reset-spacing {
