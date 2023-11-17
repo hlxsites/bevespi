@@ -160,6 +160,12 @@ header .nav-middle .expand-top {
   top: 0;
 }
 
+header .nav-middle .expand-top.expanded {
+  background-image: url('/icons/mobile-collapse-top-nav.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 header .nav-middle img {
   width: 156px;
   height: 100%;

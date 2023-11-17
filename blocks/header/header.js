@@ -30,7 +30,10 @@ export default async function decorate(block) {
 
     const expandTop = document.createElement('div');
     expandTop.classList.add('expand-top');
-    expandTop.addEventListener('click', () => { nav.querySelector('.nav-top').classList.toggle('expanded'); });
+    expandTop.addEventListener('click', () => {
+      nav.querySelector('.nav-top').classList.toggle('expanded');
+      nav.querySelector('.expand-top').classList.toggle('expanded');
+    });
     nav.querySelector('.nav-middle').appendChild(expandTop);
 
     const search = document.createElement('div');
