@@ -6,7 +6,7 @@ header .nav-top {
   background-color: var(--background-grey-1);
 }
 
-header .expanded .nav-top {
+header .nav-top.expanded {
   height: unset;
 }
 
