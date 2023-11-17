@@ -1,3 +1,13 @@
+.section.copd-causes-container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.section.copd-causes-container .default-content-wrapper {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
 .block.copd-causes {
     background: unset;
     padding: 14px;
@@ -24,6 +34,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 899px) {
+    .block.copd-causes > div > div:first-child {
+        justify-content: start;
+        padding-top: 18px;
+    }
 }
 
 .block.copd-causes > div > div:nth-child(2) {

@@ -197,6 +197,8 @@ html {
 
     font-size: 62.5%;
     scroll-behavior: smooth;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -326,6 +328,10 @@ main img {
     .default-content-wrapper img {
         transform: scale(1);
     }
+}
+
+a[href^="tel"] {
+    color: var(--text-color) !important;
 }
 
 /* buttons */
@@ -461,10 +467,31 @@ a.button.secondary:any-link {
     font-size: 1.4rem;
 }
 
+main .section.white-text h1 {
+    color: white;
+}
+
+main .section.small-heading h1 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+
+.breathing-room main .section.small-heading h1 {
+    font-size: var(--heading-font-size-m);
+}
+
+.side-effects main div.hero > div:nth-of-type(n+2) > div h1 {
+    margin: 50px 0 30px;
+}
+
 @media (min-width: 900px) {
     .side-effects main .section a.button.secondary:any-link {
         font-size: 1.6rem;
         font-weight: var(--font-weight-regular);
+    }
+
+    .side-effects main div.hero > div:nth-of-type(n+2) > div h1 {
+        margin: 30px 0 50px;
     }
 }
 
@@ -720,19 +747,6 @@ main .section.white-text {
     color: white;
 }
 
-main .section.white-text h1 {
-    color: white;
-}
-
-main .section.small-heading h1 {
-    font-size: 1.9rem;
-    text-transform: uppercase;
-}
-
-.breathing-room main .section.small-heading h1 {
-    font-size: var(--heading-font-size-m);
-}
-
 @media (min-width: 900px) {
     .breathing-room main .section.small-heading h1 {
         font-size: 1.9rem;
@@ -751,6 +765,10 @@ main .section.green-accent .default-content-wrapper em {
     color: var(--color-green);
     font-style: normal;
     font-weight: 500;
+}
+
+main .section.green-accent .default-content-wrapper em a[href^="tel"] {
+    color: var(--color-green) !important;
 }
 
 main .section.green-accent .default-content-wrapper em u {
@@ -877,6 +895,10 @@ main .section.small-vertical-margins {
 
     .copd-treatment main .hero div:first-of-type > div p {
         margin: 0;
+    }
+
+    .contact-us main .hero div:first-of-type > div p {
+        margin: -18px 0;
     }
 
     main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
@@ -1721,7 +1743,8 @@ h2 > br::after {
 .hero.block.bevespi-faqs-downarrow::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after,
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
-.hero.block.copd-treatment-downarrow::after {
+.hero.block.copd-treatment-downarrow::after,
+.hero.about-copd-downarrow::after {
     display: block;
     content: " ";
     width: 43px;
@@ -1731,6 +1754,11 @@ h2 > br::after {
     position: relative;
     left: calc(50% - 22px);
     bottom: -20px;
+}
+
+.hero.block.contact-us-downarrow::after {
+    background-image: url('../images/sitemap-section-2-downarrow-mobile.png');
+    bottom: -30px;
 }
 
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
@@ -1773,6 +1801,30 @@ h2 > br::after {
 .hero.block.bevespi-faqs-downarrow::after {
     background-image: url('../images/bg_hero_faqs_down-arrow_mobile.png');
     bottom: -29px;
+}
+
+@media (max-width: 899px) {
+    .hero.about-copd-downarrow::after {
+        background-image: url('../images/about-copd-downarrow.png');
+        background-size: 32px 12px;
+        bottom: -29px;
+    }
+}
+
+@media (max-width: 460px) {
+    main .hero.about-copd-downarrow > div:first-of-type picture {
+        bottom: -17px;
+    }
+}
+
+@media (max-width: 420px) {
+    main .hero.about-copd-downarrow > div:first-of-type picture {
+        bottom: -19px;
+    }
+}
+
+.faq .accordion-1 .button {
+    border: 1px solid transparent;
 }
 
 @media (min-width: 900px) {
@@ -1894,14 +1946,6 @@ div.section:nth-of-type(2) {
         width: 115px;
     }
 
-    @media (min-width: 1400px) {
-        .copd-resources main .hero.block picture,
-        .getting-started main .hero.block picture,
-        .faqs main .hero.block picture {
-            top: unset;
-        }
-    }
-
     .getting-started main .hero.block h1 {
         margin: 30px 0 113px;
     }
@@ -1917,6 +1961,14 @@ div.section:nth-of-type(2) {
     .contact-us main .section.hero-container + .section {
         padding-top: 55px;
         padding-bottom: 0;
+    }
+}
+
+@media (max-width: 900px), (min-width: 1400px) {
+    .copd-resources main .hero.block picture,
+    .getting-started main .hero.block picture,
+    .faqs main .hero.block picture {
+        top: unset;
     }
 }
 
