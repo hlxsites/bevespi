@@ -11,7 +11,7 @@ export default function decorate(block) {
   tagDiv.id = tagDivId;
   block.append(tagDiv);
 
-  window.setTimeout(() => {
+  function onLCPComplete() {
     loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521', () => {
       // eslint-disable-next-line
       kWidget.embed({
@@ -23,5 +23,19 @@ export default function decorate(block) {
         entry_id: entryID,
       });
     });
-  }, 3200);
+  }
+
+  const lcpObserver = new PerformanceObserver((observableVitals) => {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const entry of observableVitals.getEntries()) {
+      if (entry.entryType === 'largest-contentful-paint') {
+        onLCPComplete();
+        lcpObserver.disconnect();
+      }
+    }
+  });
+  lcpObserver.observe({
+    type: 'largest-contentful-paint',
+    buffered: true,
+  });
 }
