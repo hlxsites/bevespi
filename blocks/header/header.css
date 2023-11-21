@@ -617,5 +617,6 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
   body.nav-expanded {
     overflow: hidden;
     position: fixed;
+    max-width: 100%;
   }
 }

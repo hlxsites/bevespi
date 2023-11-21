@@ -931,10 +931,6 @@ main .section.small-vertical-margins {
         margin: 40px 0 30px;
     }
 
-    .getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
-        margin-top: 0;
-    }
-
     .sitemap main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
         margin-top: 0;
     }
