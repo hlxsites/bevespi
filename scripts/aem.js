@@ -10,6 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
+import { renderStickyFragmentInformationBlock } from './utils.js';
+
 /* eslint-env browser */
 
 /**
@@ -683,6 +685,22 @@ async function loadHeader(header) {
 }
 
 /**
+ * Prepend isi fragment to the section
+ * @param {HTMLElement} section section to prepend the isi fragment
+ */
+async function appendIsiFragment(section, fragment) {
+  if (fragment) {
+    const fragmentSection = fragment.querySelector(':scope .section');
+    if (fragmentSection) {
+      renderStickyFragmentInformationBlock(fragmentSection);
+      fragmentSection.classList.add('fragment-container');
+    }
+
+    section.append(fragmentSection);
+  }
+}
+
+/**
  * Loads a block named 'footer' into footer
  * @param footer footer element
  * @returns {Promise}
@@ -734,6 +752,7 @@ export {
   loadBlocks,
   loadCSS,
   loadFooter,
+  appendIsiFragment,
   loadHeader,
   loadScript,
   readBlockConfig,

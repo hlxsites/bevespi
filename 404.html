@@ -12,7 +12,8 @@
     <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
     <script type="module">
       import { sampleRUM } from '/scripts/aem.js';
-      import { loadFragment, renderStickyFragmentInformationBlock, onScroll, scrollToInformationBlock } from '/blocks/fragment/fragment.js';
+      import { loadFragment } from '/blocks/fragment/fragment.js';
+      import { renderStickyFragmentInformationBlock, onScroll, scrollToInformationBlock } from '/scripts/utils.js';
 
       window.addEventListener('load', async () => {
         sampleRUM('404', {
