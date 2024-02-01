@@ -27,9 +27,7 @@ export default async function decorate(block) {
     logo?.parentElement?.append(a);
     a?.append(logo);
 
-    [...footer.querySelectorAll('p')].forEach((p) => {
-      wrapHyphenatedWords(p);
-    });
+    [...footer.querySelectorAll('p')].forEach(wrapHyphenatedWords);
 
     decorateIcons(footer);
     decorateExternalLinks(footer);
