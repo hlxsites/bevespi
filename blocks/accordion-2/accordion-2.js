@@ -15,7 +15,7 @@ export default async function decorate(block) {
 
     const buttonsMobile = document.createElement('div');
     buttonsMobile.classList.add('buttons', 'mobile');
-    buttonsMobile.innerHTML = '<span class="button-more">+</span><span class="button-less">Less -</span>';
+    buttonsMobile.innerHTML = '<span class="button-more">+</span><span class="button-less button-small">Less -</span>';
     const buttons = document.createElement('div');
     buttons.classList.add('buttons', 'desktop');
     buttons.innerHTML = '<span class="button-more">More +</span><span class="button-less">Less -</span>';

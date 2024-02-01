@@ -774,6 +774,11 @@ main .section.white-text {
     }
 }
 
+.what-is-copd .default-content-wrapper em {
+    white-space: normal;
+    display: inline-block;
+}
+
 main .section.green-accent .default-content-wrapper em {
     color: var(--color-green);
     font-style: normal;
@@ -1107,10 +1112,6 @@ main .section.hero-container + .section {
     text-align: left;
 }
 
-.what-is-copd .default-content-wrapper em {
-    white-space: normal;
-    display: inline-block;
-}
 .what-is-copd span.icon-separator hr {
     width: 82%;
 }

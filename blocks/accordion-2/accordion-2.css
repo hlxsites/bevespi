@@ -33,6 +33,10 @@ main .section div.accordion-2-wrapper {
   visibility: hidden;
 }
 
+.accordion-2 .button-less.button-small {
+  font-size: 1.6rem;
+}
+
 .accordion-2 .buttons.mobile {
   font-size: 30px;
   color: var(--cta-color);
@@ -145,7 +149,7 @@ main .section.accordion-2-container.video-container .accordion-2 > div > div > p
   .accordion-2 .buttons {
     font-size: 1.6rem;
   }
-  
+
   .accordion-2 > div > div > p.p-img-first {
     width: 133px;
     height: 82px;
@@ -166,7 +170,7 @@ main .section.accordion-2-container.video-container .accordion-2 > div > div > p
     grid-column: 2 / 4;
     grid-row: 1;
   }
-  
+
   .accordion-2 > div > div > *:nth-child(n+3) {
     grid-column: 2 / 4;
     grid-row: auto;

@@ -28,7 +28,6 @@ export default async function decorate(block) {
     a?.append(logo);
 
     [...footer.querySelectorAll('p')].forEach((p) => {
-      console.log(p);
       wrapHyphenatedWords(p);
     });
 

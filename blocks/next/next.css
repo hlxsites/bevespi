@@ -38,6 +38,10 @@
   padding: 5px 0 0;
 }
 
+.next.block a span {
+  display: inline-block;
+}
+
 .next.block a > span:nth-child(2) {
   width: 140px;
 }
@@ -52,10 +56,6 @@
 
 .next.block a:any-link {
   text-transform: unset;
-}
-
-.next.block a span {
-  display: inline-block;
 }
 
 .next-large {
