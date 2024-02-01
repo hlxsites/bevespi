@@ -14,6 +14,15 @@ import {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+export function wrapHyphenatedWords(element) {
+  element.innerHTML = element.textContent.split(/\s+/).map((word) => {
+    if (word.includes('-')) {
+      return `<span class="nowrap">${word}</span>`;
+    }
+    return word;
+  }).join(' ');
+}
+
 /**
  * load fonts.css and set a session storage flag
  */

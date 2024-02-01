@@ -349,6 +349,10 @@ a:not(.button):hover {
     font-weight: var(--link-font-weight-hover);
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 .copd-resources main .button-container a {
     border: 0;
     font-size: var(--body-font-size-s);
@@ -803,6 +807,11 @@ main .section.isi h2 {
     margin-bottom: 20px;
 }
 
+main .section.isi sub {
+    font-size: 0.6em;
+    top: 4px;
+}
+
 main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
 }
@@ -1098,6 +1107,10 @@ main .section.hero-container + .section {
     text-align: left;
 }
 
+.what-is-copd .default-content-wrapper em {
+    white-space: normal;
+    display: inline-block;
+}
 .what-is-copd span.icon-separator hr {
     width: 82%;
 }
@@ -2081,13 +2094,13 @@ div.section:nth-of-type(2) {
     .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li {
         font-size: 2.8rem;
     }
-    
+
     .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li {
         font-size: 2rem;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
+
     .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li > ul > li {
         font-size: 1.6rem;
     }
@@ -2158,7 +2171,7 @@ div.section:nth-of-type(2) {
     h1#about-copd {
         max-width: 150px;
     }
-    
+
     main .section.accordion-2-container.video-container .columns.font-s p {
         font-size: var(--body-font-size-s);
     }

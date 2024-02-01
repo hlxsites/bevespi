@@ -38,6 +38,10 @@
   padding: 5px 0 0;
 }
 
+.next.block a > span:nth-child(2) {
+  width: 140px;
+}
+
 .next.block a::after {
   display: none;
 }
@@ -82,6 +86,10 @@
 
   .next.block a {
     padding-top: 11px;
+  }
+
+  .next.block a > span:nth-child(2) {
+    width: unset;
   }
 
   .next.block.active > div > div {
