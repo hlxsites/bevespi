@@ -137,7 +137,8 @@
         border-bottom: 3px solid #f6f6f6;
     }
 
-    .block.copd-causes > div > div:nth-child(3) em {
+    /* not(:last-child) has a dependency on content, presented as <em> in the first row */
+    .block.copd-causes > div:first-child > div:nth-child(3) em {
         display: table;
     }
 }

@@ -94,7 +94,7 @@
 .tiles.block .modal {
   display: none;
   text-align: left;
-  padding: 20px;
+  padding: 20px 20px 0;
   box-sizing: border-box;
   color: var(--color-blue-2);
   cursor: initial;
@@ -124,14 +124,6 @@
   line-height: 1.8rem;
 }
 
-.tiles.block > div > .cover h2 {
-  margin: 0;
-  color: var(--color-blue-2);
-  font-weight: 500;
-  text-align: left;
-  font-size: 1.5rem;
-}
-
 .tiles.block > div > .cover p {
   color: var(--color-blue-2);
   text-align: left;
@@ -141,11 +133,23 @@
   font-family: var(--proximanova-font-family);
 }
 
-.tiles.block > .tile.white-text .cover h2 {
+.tiles.block > .tile.white-text .cover p {
   color: white;
 }
 
-.tiles.block > .tile.white-text .cover p {
+.breathing-room main .section.tabs-container div:first-child p:nth-of-type(2) {
+  padding: 0 0 8px;
+}
+
+.tiles.block > div > .cover h2 {
+  margin: 0;
+  color: var(--color-blue-2);
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.tiles.block > .tile.white-text .cover h2 {
   color: white;
 }
 
@@ -264,7 +268,7 @@
   }
 
   .tiles.block > div > .cover {
-    padding: 40px 30px 30px 20px;
+    padding: 40px 30px 10px 20px;
   }
 
   .tiles.block img.bottom-icon {
