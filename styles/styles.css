@@ -608,6 +608,11 @@ main .section.buttons {
 }
 
 /* Icon for generic external links (not documents) */
+main span.icon:has(img[data-icon-name="icon_ext_link"]) {
+    height: 10px;
+    width: 16px;
+}
+
 main span.icon > img[data-icon-name="icon_ext_link"] {
     margin-left: 4px;
     height: 10px;
