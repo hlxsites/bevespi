@@ -831,7 +831,8 @@ main .section.isi h2 img[alt="Report side effects"] {
 
 main .section.isi sub {
     font-size: 0.6em;
-    top: 4px;
+    bottom: 3px;
+    position: relative;
 }
 
 main div:not(.isi) .default-content-wrapper h2 {
