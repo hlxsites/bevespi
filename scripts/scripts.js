@@ -14,13 +14,23 @@ import {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
-export function wrapHyphenatedWords(element) {
-  element.innerHTML = element.textContent.split(/\s+/).map((word) => {
-    if (word.includes('-')) {
-      return `<span class="nowrap">${word}</span>`;
+export function wrapHyphenatedWordsInNode(element) {
+  element.childNodes.forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const newHtml = node.textContent.split(/\s+/).map((word) => {
+        if (word.includes('-')) {
+          return `<span class="nowrap">${word}</span>`;
+        }
+        return word;
+      }).join(' ');
+
+      const wrapper = document.createElement('span');
+      wrapper.innerHTML = newHtml;
+      element.replaceChild(wrapper, node);
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      wrapHyphenatedWordsInNode(node);
     }
-    return word;
-  }).join(' ');
+  });
 }
 
 /**

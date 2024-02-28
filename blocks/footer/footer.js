@@ -1,5 +1,8 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/aem.js';
-import { decorateExternalLinks, wrapHyphenatedWords } from '../../scripts/scripts.js';
+import {
+  decorateExternalLinks,
+  wrapHyphenatedWordsInNode,
+} from '../../scripts/scripts.js';
 
 /**
  * loads and decorates the footer
@@ -27,7 +30,7 @@ export default async function decorate(block) {
     logo?.parentElement?.append(a);
     a?.append(logo);
 
-    [...footer.querySelectorAll('p')].forEach(wrapHyphenatedWords);
+    [...footer.querySelectorAll('p')].forEach(wrapHyphenatedWordsInNode);
 
     decorateIcons(footer);
     decorateExternalLinks(footer);
