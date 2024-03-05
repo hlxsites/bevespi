@@ -10,7 +10,7 @@
   box-sizing: border-box;
   text-align: left;
 
-  --tile-height: 300px;
+  --tile-height: 280px;
   --grid-gap: 5px;
 }
 
@@ -200,10 +200,6 @@
 @media (min-width: 600px) {
   :root {
     --tile-large-font-size: 2.3rem;
-  }
-
-  .tiles.block {
-    --tile-height: 250px;
   }
 
   .tiles.block > div > .cover h2 {
