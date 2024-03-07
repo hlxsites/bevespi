@@ -159,6 +159,22 @@ main .hero > div:first-of-type picture {
   box-sizing: border-box;
 }
 
+.side-effects main .hero > div:first-of-type picture {
+  left: -75%;
+}
+
+@media (min-width: 350px) {
+  .side-effects main .hero > div:first-of-type picture {
+    left: -10%;
+  }
+}
+
+@media (min-width: 600px) {
+  .side-effects main .hero > div:first-of-type picture {
+    left: 0;
+  }
+}
+
 main .hero > div:first-of-type p > picture {
   display: none;
 }
