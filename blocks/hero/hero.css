@@ -67,6 +67,12 @@ main .hero img {
   }
 }
 
+@media (min-width: 1600px) {
+  .about-copd main .hero img {
+    object-fit: fill;
+  }
+}
+
 main .hero.home .btn-scroll {
   position: absolute;
   bottom: 0;
