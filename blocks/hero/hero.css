@@ -48,6 +48,16 @@ main .hero img {
   height: 100%;
 }
 
+.taking-bevespi-aerosphere main .hero img {
+  object-position: right;
+}
+
+@media (min-width: 400px) {
+  .taking-bevespi-aerosphere main .hero img {
+    object-position: top;
+  } 
+}
+
 .getting-started main .hero img,
 .copd-resources main .hero img {
   object-fit: fill;
@@ -167,6 +177,16 @@ main .hero > div:first-of-type picture {
 
 main .hero > div:first-of-type p > picture {
   display: none;
+}
+
+.faq main .hero > div:first-of-type picture {
+  left: -100px;
+}
+
+@media (min-width: 600px) {
+  .faq main .hero > div:first-of-type picture {
+    left: 0;
+  } 
 }
 
 main .hero > div:first-of-type p:last-of-type > picture {

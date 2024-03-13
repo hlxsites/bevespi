@@ -65,13 +65,18 @@ main .section div.highlight-1-wrapper {
 }
 
 .highlight-1 > div {
-  display: grid;
-  grid-template-columns: 84px auto;
-  grid-auto-rows: auto;
-  gap: 0 35px;
   max-width: var(--page-max-width);
   margin: auto;
   align-items: center;
+}
+
+@media (min-width: 350px) {
+  .highlight-1 > div {
+    display: grid;
+    grid-template-columns: 84px auto;
+    grid-auto-rows: auto;
+    gap: 0 35px;
+  }
 }
 
 .highlight-1 > div > div {

@@ -238,6 +238,7 @@
 
   .tiles.block .cover[aria-expanded] + .modal {
     width: calc(200% + var(--grid-gap));
+    min-height: min(100%, var(--tile-height));
   }
 
   .tiles.block .modal h2 {
