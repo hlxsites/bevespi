@@ -179,14 +179,25 @@ main .hero > div:first-of-type p > picture {
   display: none;
 }
 
+.side-effects main .hero > div:first-of-type picture {
+  left: -75%;
+}
+
 .faq main .hero > div:first-of-type picture {
   left: -100px;
 }
 
+@media (min-width: 350px) {
+  .side-effects main .hero > div:first-of-type picture {
+    left: -10%;
+  }
+}
+
 @media (min-width: 600px) {
-  .faq main .hero > div:first-of-type picture {
+  .faq main .hero > div:first-of-type picture,
+  .side-effects main .hero > div:first-of-type picture {
     left: 0;
-  } 
+  }
 }
 
 main .hero > div:first-of-type p:last-of-type > picture {
