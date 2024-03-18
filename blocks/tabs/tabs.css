@@ -144,8 +144,11 @@ main .section[data-background] > div.tabs-wrapper {
     border-right: 10px solid transparent;
     border-top: 10px solid #dedede;
     position: absolute;
-    bottom: -10px;
+    bottom: -11px;
     left: 47%;
+    background-image: none;
+    min-height: unset;
+    min-width: unset;
   }
 
   .block.tabs .tab-controls button:first-child {
