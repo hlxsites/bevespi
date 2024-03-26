@@ -18,7 +18,7 @@ export function wrapHyphenatedWordsInNode(element) {
   element.childNodes.forEach((node) => {
     if (node.nodeType === Node.TEXT_NODE) {
       const newHtml = node.textContent.split(/\s+/).map((word) => {
-        if (word.includes('-')) {
+        if (word.includes('-') || word.includes('—')) {
           return `<span class="nowrap">${word}</span>`;
         }
         return word;

@@ -1,3 +1,5 @@
+import { wrapHyphenatedWordsInNode } from '../../scripts/scripts.js';
+
 /**
  * loads and decorates the footer
  * @param {Element} block The hero block element
@@ -12,6 +14,8 @@ export default async function decorate(block) {
     heroSection.append(block.closest('.hero-wrapper'));
     section.classList.remove('hero-container');
   }
+
+  [...block.querySelectorAll('p')].forEach(wrapHyphenatedWordsInNode);
 
   if (block.classList.contains('home')) {
     const btnScroll = document.createRange()
