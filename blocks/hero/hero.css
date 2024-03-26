@@ -136,6 +136,10 @@ main .hero h1 {
   .taking-bevespi-aerosphere main .hero h1 {
     margin: 30px 0 50px;
   }
+
+  .faq main .hero h1 {
+    margin: 70px 0;
+  }
   
 }
 
