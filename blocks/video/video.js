@@ -17,7 +17,7 @@ export default function decorate(block) {
       kWidget.embed({
         targetId: tagDivId,
         wid: '_432521',
-        uiconf_id: 30355282,
+        uiconf_id: 30358591,
         flashvars: {},
         cache_st: playerID,
         entry_id: entryID,
