@@ -14,6 +14,19 @@ function addEventListeners(element, functionToCall) {
   });
 }
 
+function buildUserFeedbackContainer(titleContainer, ...content) {
+  titleContainer.classList.add('user-feedback-message');
+  const h2 = document.createElement('h2');
+  titleContainer.append(h2);
+  h2.append(...content);
+  return h2;
+}
+
+function highlightTerms(text, terms) {
+  const pattern = terms.map((term) => `\\w*${term}\\w*`).join('|');
+  return text.replace(new RegExp(pattern, 'gi'), (match) => `<strong>${match}</strong>`);
+}
+
 class SearchResults {
   constructor(indexJson, container, curLocation, pageSize) {
     this.indexJson = indexJson;
@@ -36,19 +49,6 @@ class SearchResults {
     history.pushState(state, title, url.toString());
   }
 
-  static #buildUserFeedbackContainer(titleContainer, ...content) {
-    titleContainer.classList.add('user-feedback-message');
-    const h2 = document.createElement('h2');
-    titleContainer.append(h2);
-    h2.append(...content);
-    return h2;
-  }
-
-  static #highlightTerms(text, terms) {
-    const pattern = terms.map((term) => `\\w*${term}\\w*`).join('|');
-    return text.replace(new RegExp(pattern, 'gi'), (match) => `<strong>${match}</strong>`);
-  }
-
   searchIndex(queryString, requestedPage) {
     this.container.querySelector('.results-container')?.remove();
     this.container.querySelector('.title-container')?.remove();
@@ -69,7 +69,7 @@ class SearchResults {
       searchQuery.textContent = query;
       titleContainer.append(searchQuery);
     } else {
-      SearchResults.#buildUserFeedbackContainer(
+      buildUserFeedbackContainer(
         titleContainer,
         'You did not enter any search terms.',
         document.createElement('br'),
@@ -108,13 +108,13 @@ class SearchResults {
         const link = document.createElement('a');
         link.href = row.path;
         link.title = row.title;
-        link.innerHTML = SearchResults.#highlightTerms(row.title, terms);
+        link.innerHTML = highlightTerms(row.title, terms);
         linkParagraph.append(link);
 
         const descriptionParagraph = document.createElement('p');
         descriptionParagraph.classList.add('search-result-abstract');
         if (row.description) {
-          descriptionParagraph.innerHTML = SearchResults.#highlightTerms(row.description, terms);
+          descriptionParagraph.innerHTML = highlightTerms(row.description, terms);
         } else {
           descriptionParagraph.innerHTML = 'No description available.';
         }
@@ -124,7 +124,7 @@ class SearchResults {
     });
 
     if (count === 0) {
-      SearchResults.#buildUserFeedbackContainer(titleContainer, 'We\'re sorry, but no results matched your search term.');
+      buildUserFeedbackContainer(titleContainer, 'We\'re sorry, but no results matched your search term.');
     } else if (pages > 1) {
       const paginationItems = document.createElement('ul');
       paginationItems.classList.add('paginationitems');

@@ -180,6 +180,16 @@ header .nav-middle {
   position: relative;
 }
 
+header.nav-expanded .nav-middle {
+  height: 153px;
+}
+
+@media (min-width: 300px) {
+  header.nav-expanded .nav-middle {
+    height: 131px;
+  }
+}
+
 @media (max-width: 899px) {
   header .nav-middle {
     padding: 0 8px;
@@ -428,11 +438,11 @@ header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(4) {
 
 @media (max-width: 300px) {
   header .nav-middle > div > div > div div:nth-of-type(1) {
-    top: 46px;
+    top: 26px;
   }
 
   header .nav-middle > div > div > div div:nth-of-type(2) {
-    top: 35px;
+    top: 15px;
   }
 }
 
