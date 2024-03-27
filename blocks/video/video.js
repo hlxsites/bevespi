@@ -11,13 +11,18 @@ export default function decorate(block) {
   tagDiv.id = tagDivId;
   block.append(tagDiv);
 
+  let uiConfId = 30355282;
+  if (block.classList.contains('keep-same-video-interface-on-mobile')) {
+    uiConfId = 30358591;
+  }
+
   window.setTimeout(() => {
     loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/30355282/partner_id/432521', () => {
       // eslint-disable-next-line
       kWidget.embed({
         targetId: tagDivId,
         wid: '_432521',
-        uiconf_id: 30355282,
+        uiconf_id: uiConfId,
         flashvars: {},
         cache_st: playerID,
         entry_id: entryID,
