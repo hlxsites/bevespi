@@ -64,7 +64,9 @@ footer .footer a > img.privacy-options-icon {
 @media (min-width: 900px) {
     footer .footer > div > div > ul {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0;
+        column-gap: 18px;
     }
 
     footer .footer > div > div > p {
@@ -86,5 +88,9 @@ footer .footer a > img.privacy-options-icon {
     footer .footer > div > div > p:last-child img {
         width: 141px;
         height: 34px;
+    }
+
+    footer .footer > div > div {
+        max-width: var(--page-max-width)
     }
 }
