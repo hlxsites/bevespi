@@ -55,6 +55,12 @@ footer .footer > div ul > li {
     white-space: nowrap;
 }
 
+footer .footer a > img.privacy-options-icon {
+    width: 23px;
+    height: auto;
+    margin-left: 5px;
+}
+
 @media (min-width: 900px) {
     footer .footer > div > div > ul {
         display: flex;

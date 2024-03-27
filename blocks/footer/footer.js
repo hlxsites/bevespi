@@ -30,7 +30,14 @@ export default async function decorate(block) {
     logo?.parentElement?.append(a);
     a?.append(logo);
 
+    const privacyoptionsIcon = document.createElement('img');
+    privacyoptionsIcon.classList.add('privacy-options-icon');
+    privacyoptionsIcon.src = '/icons/privacyoptions123x59.png';
+
     [...footer.querySelectorAll('p')].forEach(wrapHyphenatedWordsInNode);
+    const privacyoptionsLink = footer.querySelector('a[href^="https://do-not-sell-my-personal-information.astrazeneca.com/"]');
+    privacyoptionsLink.target = '_blank';
+    privacyoptionsLink.appendChild(privacyoptionsIcon);
 
     decorateIcons(footer);
     decorateExternalLinks(footer);

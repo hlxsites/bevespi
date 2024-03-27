@@ -829,6 +829,14 @@ main .section.isi {
     line-height: 1;
 }
 
+main .section.isi a:hover {
+    font-weight: bold;
+}
+
+main .section.isi a[href^="http://us-aereporting.astrazeneca.com/"]:active {
+    text-decoration: none!important;
+}
+
 .what-is-copd h2
 {
     font-size: var(--body-font-size-xl);
