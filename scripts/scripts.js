@@ -9,7 +9,9 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
-  loadCSS, createOptimizedPicture,
+  loadCSS,
+  createOptimizedPicture,
+  appendIsiFragment,
 } from './aem.js';
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
@@ -188,6 +190,32 @@ async function loadEager(doc) {
 }
 
 /**
+ * Loads a fragment.
+ * @param {string} path The path to the fragment
+ * @returns {HTMLElement} The root element of the fragment
+ */
+export async function loadFragment(path) {
+  if (path && path.startsWith('/')) {
+    const resp = await fetch(`${path}.plain.html`);
+    if (resp.ok) {
+      const main = document.createElement('main');
+      main.innerHTML = await resp.text();
+      decorateMain(main);
+      await loadBlocks(main);
+      return main;
+    }
+  }
+  return null;
+}
+
+async function loadIsiFragment(section) {
+  const path = '/fragments/important-safety-information';
+  const fragment = await loadFragment(path);
+  await appendIsiFragment(section, fragment);
+  loadCSS(`${window.hlx.codeBasePath}/blocks/fragment/fragment.css`);
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -200,6 +228,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   loadHeader(doc.querySelector('header'));
+  await loadIsiFragment(doc.querySelector('main'));
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
