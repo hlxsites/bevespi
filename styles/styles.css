@@ -2092,7 +2092,7 @@ div.section:nth-of-type(2) {
     }
 
     .getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
-        margin: 29px 0 90px;
+        margin: 52px 0 147px;
         font-size: var(--heading-font-size-xxl);
         max-width: unset;
     }
